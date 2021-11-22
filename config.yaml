@@ -1,4 +1,4 @@
-baseurl: /
+baseurl: https://pa470spring2022.netlify.app/
 languageCode: en-us
 title: A Hugo website
 theme: hugo-lithium
