@@ -19,7 +19,7 @@ menu:
     - name: About
       url: /about/
     - name: Syllabus
-      url: /2022/01/syllabus/
+      url: /2021/01/syllabus/
     - name: Blackboard
       url: https://uic.blackboard.com/
 params:
