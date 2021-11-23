@@ -1,6 +1,6 @@
 ---
 title: "Syllabus"
-date: 2022-01-01
+date: 2022-01-01T00:00:00-00:00
 categories: ["R"]
 tags: ["syllabus"]
 ---
@@ -9,4 +9,10 @@ tags: ["syllabus"]
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
-TBD
+## PA 470 – Artificial Intelligence and Machine Learning in the Public Sector
+
+*Introduces students to public sector applications of artificial intelligence and machine learning. It begins with the philosophical foundations of artificial intelligence before introducing students to major frameworks for learning. Course Information: 3 undergraduate hours. 4 graduate hours. Prerequisite(s): Admission to the Master of Public Administration program or consent of the instructor.*
+
+### Week 1
+
+
