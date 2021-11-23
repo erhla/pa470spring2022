@@ -1,6 +1,6 @@
 baseurl: https://pa470spring2022.netlify.app/
 languageCode: en-us
-title: A Hugo website
+title: PA 470
 theme: hugo-lithium
 googleAnalytics: ''
 disqusShortname: ''
@@ -14,28 +14,24 @@ permalinks:
   post: /:year/:month/:day/:slug/
 menu:
   main:
+    - name: Home
+      url: /
     - name: About
       url: /about/
-    - name: GitHub
-      url: https://github.com/rstudio/blogdown
-    - name: Twitter
-      url: https://twitter.com/rstudio
+    - name: Syllabus
+      url: /TBD/
+    - name: Blackboard
+      url: https://uic.blackboard.com/
 params:
   MathJaxCDN: //cdnjs.cloudflare.com/ajax/libs
   MathJaxVersion: 2.7.5
   description: A website built through Hugo and blogdown.
-  favicon: favicon.ico
   highlightjsCDN: //cdnjs.cloudflare.com/ajax/libs
   highlightjsLang:
     - r
     - yaml
   highlightjsTheme: github
   highlightjsVersion: 9.12.0
-  logo:
-    alt: Logo
-    height: 50
-    url: logo.png
-    width: 50
 markup:
   defaultMarkdownHandler: goldmark
   goldmark:

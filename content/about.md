@@ -3,4 +3,8 @@ date: "2016-05-05T21:48:51-07:00"
 title: About
 ---
 
-This is a "hello world" example website for the [**blogdown**](https://github.com/rstudio/blogdown) package. The theme was forked from [@jrutheiser/hugo-lithium-theme](https://github.com/jrutheiser/hugo-lithium-theme) and modified by [Yihui Xie](https://github.com/yihui/hugo-lithium).
+This is the course website for PA 470 for Spring 2022. This course is taught on behalf of the [Master of Science in Civic Analytics at the University of Illinois Chicago](https://cuppa.uic.edu/academics/pa/pa-programs/master-of-science-in-civic-analytics/).
+
+## About Me
+
+Check out my [personal website!](https://erhla.github.io/)
