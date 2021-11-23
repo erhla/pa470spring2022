@@ -11,7 +11,7 @@ ignoreFiles:
   - \.knit\.md$
   - \.utf8\.md$
 permalinks:
-  post: /:year/:month/:day/:slug/
+  post: /:year/:month/:slug/
 menu:
   main:
     - name: Home
@@ -19,7 +19,7 @@ menu:
     - name: About
       url: /about/
     - name: Syllabus
-      url: /TBD/
+      url: /2022/01/syllabus/
     - name: Blackboard
       url: https://uic.blackboard.com/
 params:

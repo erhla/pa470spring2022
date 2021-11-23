@@ -1,0 +1,12 @@
+---
+title: "Syllabus"
+date: 2022-01-01
+categories: ["R"]
+tags: ["syllabus"]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+TBD
