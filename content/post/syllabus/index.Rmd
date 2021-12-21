@@ -1,18 +1,178 @@
 ---
-title: "Syllabus"
+title: "Calendar"
 date: 2021-01-01T00:00:00-00:00
 categories: ["R"]
-tags: ["syllabus"]
+tags: ["calendar"]
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
-## PA 470 – Artificial Intelligence and Machine Learning in the Public Sector
+# PA 470 – Artificial Intelligence and Machine Learning in the Public Sector
 
-*Introduces students to public sector applications of artificial intelligence and machine learning. It begins with the philosophical foundations of artificial intelligence before introducing students to major frameworks for learning. Course Information: 3 undergraduate hours. 4 graduate hours. Prerequisite(s): Admission to the Master of Public Administration program or consent of the instructor.*
+*Public sector applications of artificial intelligence and machine learning. Philosophical foundations of artificial intelligence and major frameworks for learning.*
 
-### Week 1
+Artificial intelligence (AI) and machine learning (ML) have transformed the private sector pressuring the public sector to follow suit and become *smart* by adopting AI/ML. 
+Yet, public sector applications differ greatly from private sector ones where issues like data availability and equity can be easily sidestepped.
+Key assumptions of AI/ML models often conflict with traditional principles of government like transparency, accountability, universality, and equality/equity. 
 
+In this course, we will explore critical issues with AI/ML in the public sector and learn simple applications in R and *tidymodels* to provide public sector technologists with adequate tools to navigate AI/ML in government.
 
+## Week 1, 1/13
+
+*Introductions, Course Technology Stack, and Review*
+
+- [Can a Machine Learn Morality?](https://www.nytimes.com/2021/11/19/technology/can-a-machine-learn-morality.html)
+- [Ask Delphi](https://delphi.allenai.org/?a1=Women+are+better+than+men.)
+- [Crime Prediction Software Promised to Be Free of Biases. New Data Shows It Perpetuates Them](https://themarkup.org/prediction-bias/2021/12/02/crime-prediction-software-promised-to-be-free-of-biases-new-data-shows-it-perpetuates-them)
+- Chapter 6, Data Science for Public Policy (DSPP)
+
+**Assignment: Coding Warmup, Optional**
+
+## Week 2, 1/20
+
+*Review and Conceptual Foundations*
+
+- [tidymodels, Chapters 1-3 Review](https://www.tmwr.org/index.html)
+- Chapters 7 & 8, DSPP
+
+**Assignment: Coding Warmup 2, Optional**
+
+## Week 3, 1/27
+
+*Coding 1*
+
+- [tidymodels, Chapter 4-6 Fitting/Linear](https://www.tmwr.org/index.html)
+- Chapter 9, DSPP
+
+**Assignment: Detroit Part 1**
+
+## Week 4, 2/3
+
+*Public Sector Case Studies*
+
+- [A Catalog of Civic Data Use Cases](https://datasmart.ash.harvard.edu/news/article/how-can-data-and-analytics-be-used-to-enhance-city-operations-723)
+- [New York City Artifical Intelligence Strategy](https://www1.nyc.gov/assets/cto/downloads/ai-strategy/nyc_ai_strategy.pdf)
+- [Secretary Antony J. Blinken at the National Security Commission on Artificial Intelligence’s (NSCAI) Global Emerging Technology Summit](https://www.state.gov/secretary-antony-j-blinken-at-the-national-security-commission-on-artificial-intelligences-nscai-global-emerging-technology-summit/)
+- [Cook County Assessor Residential Valuation Model](https://gitlab.com/ccao-data-science---modeling/models/ccao_res_avm)
+- [Summary of Agency Compliance Reporting, NYC Algorithms](https://www1.nyc.gov/assets/ampo/downloads/pdf/AMPO-CY-2020-Agency-Compliance-Reporting.pdf)
+- [Preparing for the Future of Artifical Intelligence](https://obamawhitehouse.archives.gov/sites/default/files/whitehouse_files/microsites/ostp/NSTC/preparing_for_the_future_of_ai.pdf)
+
+**Assignment: Reflection 1, Case Study**
+
+## Week 5, 2/10
+
+*Coding 2*
+
+- Chapter 10, DSPP
+- [tidymodels, Chapter 7-8 Workflow & Recipies](https://www.tmwr.org/index.html)
+
+**Assignment: Detroit Part 2**
+
+## Week 6, 2/17
+
+*Ethics: Government's Black Box*
+
+- [A City Is a City — Against the metaphorization of data](https://everestpipkin.medium.com/a-city-is-a-city-against-the-metaphorization-of-data-2139be087a71)
+- [ai.gov](https://www.ai.gov/)
+- [Crafting an AI strategy for government leaders](https://www2.deloitte.com/us/en/insights/industry/public-sector/ai-strategy-for-government-leaders.html)
+- [Using AI and machine learning to reduce government fraud](https://www.brookings.edu/research/using-ai-and-machine-learning-to-reduce-government-fraud/)
+- [Fragile Algorithms and Fallible DecisionMakers: Lessons from the Justice System](https://pubs.aeaweb.org/doi/pdfplus/10.1257/jep.35.4.71)
+- [REPORT: How to make AI work in government and for people, Case Studies](https://www.centreforpublicimpact.org/insights/how-to-make-ai-work-in-government-and-for-people)
+- Chapter 5, Civilian Casualties, Weapons of Math Destruction, Cathy O'Neil
+
+**Assignment: Reflection 2, Relationships**
+
+## Week 7, 2/24
+
+*Coding 3*
+
+- Chapters 11-12, DSPP
+- [tidymodels, Chapter 9 Effectiveness](https://www.tmwr.org/index.html)
+
+**Assignment: Detroit Part 3**
+
+## Week 8, 3/3
+
+*Ethical Critiques*
+
+- [Excavating AI](https://excavating.ai/)
+- [Assembling Accountability](https://datasociety.net/wp-content/uploads/2021/06/Assembling-Accountability.pdf)
+- [To Live in Their Utopia: Why Algorithmic Systems Create Absurd Outcomes](https://ali-alkhatib.com/papers/chi/utopia/utopia.pdf)
+- [Decolonial AI: Decolonial Theory as Sociotechnical Foresight in Artificial Intelligence](https://arxiv.org/pdf/2007.04068.pdf)
+- [Algorithmic Risk Assessments Can Alter Human Decision-Making Processes in High-Stakes Government Contexts](https://www.benzevgreen.com/wp-content/uploads/2021/08/21-cscw.pdf)
+- Chapter 14, DSPP
+
+Note: Introduce final project
+
+**Assignment: Reflection 3, Ideals**
+
+## Week 9, 3/10
+
+*Coding 4*
+
+- [tidymodels, Chapter 10-11 Resampling](https://www.tmwr.org/index.html)
+- Chapter 13, DSPP
+
+**Assignment: Detroit Part 4**
+
+## Week 10, 3/17
+
+*Coding 5*
+
+- [tidymodels, Chapter 12 Tuning, 17 Dimensionality Reduction](https://www.tmwr.org/index.html)
+- Chapter 15, DSPP
+
+**Assignment: Detroit Part 5**
+
+## Week 11, 3/24
+
+Spring Vacation No Class
+
+## Week 12, 3/31
+
+*Detroit Presentation*
+
+- [In the Age of AI, Frontline](https://www.youtube.com/watch?v=5dZ_lvDgevk)
+- [Algorithms](https://github.com/TheAlgorithms/Python)
+
+Notes:
+
+Present Detroit model
+
+## Week 13, 4/7
+
+*Coding 6*
+
+- [tidymodels, Chapter 18-20 Understanding Models](https://www.tmwr.org/index.html)
+
+## Week 14, 4/14
+
+*Ethics TBD*
+
+## Week 15, 4/21
+
+*Public Sector Careers*
+
+## Week 16, 4/28
+
+*Final Presentations*
+
+Writing Assignment #1
+
+- Find and analyze a case study of AI/ML in the public sector. What is this application designed to do? What data is required to accomplish that purpose? Does that data exist?  
+
+Writing Assignment #2
+
+- Explore the existing relationship between people, data, and government. How is this relationship perpetuated into ML/AI government applications? Identify areas where applications might be less or more problematic.
+
+Writing Assignment #3
+
+- What is an *ideal* application of AI/ML? Is this possible? Include remarks on ethics, benefits, harms, and the availability and unavailability of data
+
+# Course Inspired by...
+
+- [Linguistics 575, UW](https://faculty.washington.edu/ebender/2021_575/#foundations)
+- [CSE 599, UW](https://uw-cse599p.github.io/calendar/)
+- [Satej Soman](https://satejsoman.com/#/)
