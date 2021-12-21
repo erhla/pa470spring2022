@@ -137,9 +137,7 @@ Spring Vacation No Class
 - [In the Age of AI, Frontline](https://www.youtube.com/watch?v=5dZ_lvDgevk)
 - [Algorithms](https://github.com/TheAlgorithms/Python)
 
-Notes:
-
-Present Detroit model
+Note: Present Detroit model
 
 ## Week 13, 4/7
 
