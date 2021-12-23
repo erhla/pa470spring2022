@@ -37,3 +37,8 @@ rsconnect/
 
 .Rprofile
 *.Rproj
+
+notes.docx
+*.pdf
+~$notes.docx
+*.png
