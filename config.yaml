@@ -11,17 +11,17 @@ ignoreFiles:
   - \.knit\.md$
   - \.utf8\.md$
 permalinks:
-  post: /:year/:month/:slug/
+  post: /:slug/
 menu:
   main:
     - name: Home
       url: /
+    - name: Calendar
+      url: /calendar/
+    - name: Syllabus
+      url: https://github.com/erhla/pa470spring2022/blob/main/files/PA%20470.docx
     - name: About
       url: /about/
-    - name: Syllabus
-      url: /2021/01/syllabus/
-    - name: Blackboard
-      url: https://uic.blackboard.com/
 params:
   MathJaxCDN: //cdnjs.cloudflare.com/ajax/libs
   MathJaxVersion: 2.7.5

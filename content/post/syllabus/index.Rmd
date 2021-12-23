@@ -28,7 +28,7 @@ In this course, we will explore critical issues with AI/ML in the public sector 
 - [Crime Prediction Software Promised to Be Free of Biases. New Data Shows It Perpetuates Them](https://themarkup.org/prediction-bias/2021/12/02/crime-prediction-software-promised-to-be-free-of-biases-new-data-shows-it-perpetuates-them)
 - Chapter 6, Data Science for Public Policy (DSPP)
 
-**Assignment: Coding Warmup, Optional**
+**Assignment: [Coding Warmup 1](/coding-warmup-1), Optional**
 
 ## Week 2, 1/20
 
@@ -88,12 +88,20 @@ In this course, we will explore critical issues with AI/ML in the public sector 
 
 *Coding 3*
 
-- Chapters 11-12, DSPP
+- Chapter 11, DSPP
 - [tidymodels, Chapter 9 Effectiveness](https://www.tmwr.org/index.html)
 
 **Assignment: Detroit Part 3**
 
 ## Week 8, 3/3
+
+*Coding 3.5 Geospatial*
+
+- Chapter 12, DSPP
+- [sf](https://r-spatial.github.io/sf/)
+- [tidycensus](https://walker-data.com/tidycensus/)
+
+## Week 9, 3/10
 
 *Ethical Critiques*
 
@@ -108,7 +116,7 @@ Note: Introduce final project
 
 **Assignment: Reflection 3, Ideals**
 
-## Week 9, 3/10
+## Week 10, 3/17
 
 *Coding 4*
 
@@ -117,7 +125,12 @@ Note: Introduce final project
 
 **Assignment: Detroit Part 4**
 
-## Week 10, 3/17
+
+## Week 11, 3/24
+
+Spring Vacation No Class
+
+## Week 12, 3/31
 
 *Coding 5*
 
@@ -126,11 +139,7 @@ Note: Introduce final project
 
 **Assignment: Detroit Part 5**
 
-## Week 11, 3/24
-
-Spring Vacation No Class
-
-## Week 12, 3/31
+## Week 13, 4/7
 
 *Detroit Presentation*
 
@@ -139,15 +148,11 @@ Spring Vacation No Class
 
 Note: Present Detroit model
 
-## Week 13, 4/7
+## Week 14, 4/14
 
 *Coding 6*
 
 - [tidymodels, Chapter 18-20 Understanding Models](https://www.tmwr.org/index.html)
-
-## Week 14, 4/14
-
-*Ethics TBD*
 
 ## Week 15, 4/21
 

@@ -1,0 +1,17 @@
+---
+title: "Coding Warmup 2"
+date: 2021-01-01T00:00:00-00:00
+categories: ["R"]
+tags: ["warmup"]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE,
+                      include = FALSE)
+```
+
+This assignment is optional. I encourage you to review the problems to see if (1) you know how to do them or (2) if you know how to google how to do it. If either path forward escapes you, I strongly encourage that you complete this assignment.
+
+# Part 1
+
+
