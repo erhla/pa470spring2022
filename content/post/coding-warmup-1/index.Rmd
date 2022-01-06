@@ -1,6 +1,6 @@
 ---
 title: "Coding Warmup 1"
-date: 2021-01-01T00:00:00-00:00
+date: 2022-01-01T00:00:00-00:00
 categories: ["R"]
 tags: ["warmup"]
 ---
@@ -10,11 +10,13 @@ knitr::opts_chunk$set(collapse = TRUE,
                       include = FALSE)
 ```
 
-This assignment is optional. I encourage you to review the problems to see if (1) you know how to do them or (2) if you know how to google how to do it. If either path forward escapes you, I strongly encourage that you complete this assignment.
+This assignment is ungraded. I encourage you to review the problems to see if (1) you know how to do them or (2) if you know how to google how to do it. If either path forward escapes you, I suggest that you complete this assignment.
 
 # Part 1
 
 Download [Cook County Assessor's Residential Modeling Characteristics (Chicago)](https://datacatalog.cookcountyil.gov/Property-Taxation/Cook-County-Assessor-s-Residential-Modeling-Charac/8f9d-wy2d). Load this into R using `read_csv`. Either set your file directory using a R project or create a variable with the path of the folder the file is located in. Do not use absolute paths!
+
+Note you can also use urls in `read_csv` directly.
 
 ```{r}
 library(tidyverse)

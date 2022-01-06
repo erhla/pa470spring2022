@@ -1,0 +1,27 @@
+---
+title: "Coding Warmup 2"
+date: 2022-01-13T00:00:00-00:00
+categories: ["R"]
+tags: ["warmup"]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE,
+                      include = FALSE)
+```
+
+This assignment is ungraded. I encourage you to review the problems to see if (1) you know how to do them or (2) if you know how to google how to do it. If either path forward escapes you, I suggest that you complete this assignment.
+
+# Part 1
+
+Create an RMarkdown file to use for this assignment. Use html as the output and change at least one option in the yaml. Complete the rest of the assignment using markdown and chunks to create readible code and output.
+
+# Part 2
+
+Using [censusreporter.org](censusreporter.org), pick an American Community Survey variable and a geographic area and division (e.g. nationwide and states, statewide and counties, countywide and county subdivisions, or citywide and census tracts).
+
+Using `tigris`, `tidycensus`, and `leaflet` (encouraged, or your favorite R package for maps), map the variable over your chosen geographic divisions. Select an appropriate pallete, and consider adding popup labels. Write a few sentences describing your map.
+
+# Part 3
+
+Create a GitHub repository and commit your knitted RMarkdown. Activate GitHub pages and find the appropriate url which serves your html map! Here is an [example](https://erhla.github.io/chicago-population-ward/Estimates.html).
