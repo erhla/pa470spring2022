@@ -1,0 +1,35 @@
+---
+title: "Detroit 1"
+date: 2022-01-27T00:00:00-00:00
+categories: ["R"]
+tags: ["detroit"]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE,
+                      include = FALSE)
+```
+
+1. Create an RMarkdown file. Set all chunks to show code but not output.
+2. 
+
+[Parcels](https://data.detroitmi.gov/datasets/detroitmi::parcels-2/about)
+[Auctions](https://data.detroitmi.gov/datasets/detroitmi::auction-sales/about)
+[Sales](https://data.detroitmi.gov/datasets/detroitmi::property-sales-1/about)
+
+
+## Assignment
+
+This is a multi-part assignment where you will build upon your previous work each week with new material from the course and feedback. 
+You will explore property assessment in Detroit, Michigan and create an assessment model.
+After the completion of the assignment, you will wrap your model into a report which analyzes the effectiveness of your model based on the ethical and other frameworks from class and make a brief presentation to the class.
+
+## Grading
+
+25% - completes all assignments weekly
+
+25% - timely incorporation of feedback and new concepts from course
+
+25% - brief final presentation
+
+25% - quality of final submission

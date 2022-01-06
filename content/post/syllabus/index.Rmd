@@ -19,6 +19,8 @@ Key assumptions of AI/ML models often conflict with traditional principles of go
 
 In this course, we will explore critical issues with AI/ML in the public sector and learn simple applications in R and `tidymodels` to provide public sector technologists with adequate tools to navigate AI/ML in government.
 
+**Assignments and readings should be completed before the date listed, excepting week 1.**
+
 ## Week 1, 1/13 (online)
 
 *Introductions, Course Technology Stack, and Review*
