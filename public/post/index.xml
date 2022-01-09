@@ -1,21 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on PA 470</title>
-    <link>https://pa470spring2022.netlify.app/post/</link>
-    <description>Recent content in Posts on PA 470</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://pa470spring2022.netlify.app/post/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Calendar</title>
-      <link>https://pa470spring2022.netlify.app/2021/01/calendar/</link>
-      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://pa470spring2022.netlify.app/2021/01/calendar/</guid>
-      <description>PA 470 – Artificial Intelligence and Machine Learning in the Public SectorPublic sector applications of artificial intelligence and machine learning. Philosophical foundations of artificial intelligence and major frameworks for learning.
-Artificial intelligence (AI) and machine learning (ML) have transformed the private sector pressuring the public sector to follow suit and become smart by adopting AI/ML.Yet, public sector applications differ greatly from private sector ones where issues like data availability and equity can be easily sidestepped.</description>
-    </item>
-    
-  </channel>
-</rss>
