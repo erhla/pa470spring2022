@@ -16,6 +16,8 @@ This assignment is ungraded. I encourage you to review the problems to see if (1
 
 Exercise 7.2.3 from Data Science for Public Policy. Data can be found [here](https://raw.githubusercontent.com/DataScienceForPublicPolicy/diys/main/data/home_sales_nyc.csv).
 
+- Graph and regress sale price against gross square feet interpret the results
+
 ```{r}
 library(tidyverse)
 sale_df <- read_csv("https://raw.githubusercontent.com/DataScienceForPublicPolicy/diys/main/data/home_sales_nyc.csv")
@@ -54,6 +56,15 @@ corr_res %>%
 # Part 3
 
 Exercise 7.4.5
+
+Estimate a set of regressions, evaluate the pros and cons of each, and select the “best” specification.
+
+Create and analyze the following four models from the textbook and one of your own:
+
+- Model 1 (mod1) regresses sales prices and building area
+- Model 2 (mod2) adds borough as a categorical variable
+- Model 3 (mod3) incorporates an interaction to estimate borough-specific slopes for building area
+- Model 4 (mod4) adds land area
 
 ```{r}
 library(gridExtra)
