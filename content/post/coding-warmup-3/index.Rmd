@@ -1,0 +1,131 @@
+---
+title: "Coding Warmup 3"
+date: 2022-02-03T00:00:00-00:00
+categories: ["R"]
+tags: ["warmup"]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE,
+                      include = FALSE)
+```
+
+This assignment is ungraded. I encourage you to review the problems to see if (1) you know how to do them or (2) if you know how to google how to do it. If either path forward escapes you, I suggest that you complete this assignment.
+
+# Part 1
+
+Exercise 7.2.3 from Data Science for Public Policy. Data can be found [here](https://raw.githubusercontent.com/DataScienceForPublicPolicy/diys/main/data/home_sales_nyc.csv).
+
+```{r}
+library(tidyverse)
+sale_df <- read_csv("https://raw.githubusercontent.com/DataScienceForPublicPolicy/diys/main/data/home_sales_nyc.csv")
+
+ggplot(data = sale_df, aes(x = gross.square.feet, y = sale.price)) +
+  geom_point(alpha = 0.15,
+             size = 1.2,
+             colour = "blue") +
+  scale_x_continuous("Property size (gross square feet)", labels = scales::comma) +
+  scale_y_continuous("Sale price (USD)", labels = scales::comma) 
+
+reg_est <- lm(sale.price ~ gross.square.feet, data = sale_df)
+
+summary(reg_est)
+```
+
+
+# Part 2
+
+Reproduce this figure from [tidymodels 3.3](https://www.tmwr.org/base-r.html#tidiness-modeling) 
+![](https://www.tmwr.org/figures/base-r-corr-plot-1.svg) with the data from Part 1 replacing mpg with sale price for numeric variables.
+
+```{r}
+corr_res <- map(sale_df %>% select(where(is.numeric), -c(sale.price, borough, zip.code)), cor.test, y=sale_df$sale.price)
+corr_res %>% 
+  map_dfr(broom::tidy, .id = "predictor") %>% 
+  ggplot(aes(x = fct_reorder(predictor, estimate))) + 
+  geom_point(aes(y = estimate)) + 
+  geom_errorbar(aes(ymin = conf.low, ymax = conf.high), width = .1) +
+  labs(x = NULL, y = "Correlation with sale price") +
+  theme_bw() +
+  coord_flip()
+```
+
+
+# Part 3
+
+Exercise 7.4.5
+
+```{r}
+library(gridExtra)
+# Simple regression
+mod1 <- lm(sale.price ~ gross.square.feet,
+           data = sale_df)
+# With borough
+mod2 <- lm(sale.price ~ gross.square.feet + factor(borough),
+           data = sale_df)
+# Interaction
+mod3 <- lm(sale.price ~ gross.square.feet * factor(borough),
+           data = sale_df)
+# With Additional variables
+mod4 <-
+  lm(sale.price ~ gross.square.feet * factor(borough) + land.square.feet + age,
+     data = sale_df)
+
+#Base
+base1 <-
+  ggplot(sale_df, aes(x = gross.square.feet, y = sale.price / 1000000)) +
+  geom_point(colour = rgb(0, 0, 0, 0.1), size = 0.8) +
+  geom_point(
+    aes(x = sale_df$gross.square.feet, y = predict(mod1) / 1000000),
+    colour = rgb(1, 0, 0, 0.2),
+    size = 0.6
+  ) +
+  xlab("Gross Square Feet") + ylab("Sales Price ($MM)") +
+  ggtitle(paste0("Model 1 (BIC = ", round(BIC(mod1)), ")")) +
+  xlim(0, 3000) + ylim(0, 3)
+
+#Base2
+base2 <-
+  ggplot(sale_df, aes(x = gross.square.feet, y = sale.price / 1000000)) +
+  geom_point(colour = rgb(0, 0, 0, 0.1), size = 0.8) +
+  geom_point(
+    aes(x = sale_df$gross.square.feet, y = predict(mod2) / 1000000),
+    colour = rgb(1, 0, 0, 0.2),
+    size = 0.6
+  ) +
+  xlab("Gross Square Feet") + ylab("Sales Price ($MM)") +
+  ggtitle(paste0("Model 2 (BIC = ", round(BIC(mod2)), ")")) +
+  xlim(0, 3000) + ylim(0, 3)
+
+#Base3
+base3 <-
+  ggplot(sale_df, aes(x = gross.square.feet, y = sale.price / 1000000)) +
+  geom_point(colour = rgb(0, 0, 0, 0.1), size = 0.8) +
+  geom_point(
+    aes(x = sale_df$gross.square.feet, y = predict(mod3) / 1000000),
+    colour = rgb(1, 0, 0, 0.2),
+    size = 0.6
+  ) +
+  xlab("Gross Square Feet") + ylab("Sales Price ($MM)") +
+  ggtitle(paste0("Model 3 (BIC = ", round(BIC(mod3)), ")")) +
+  xlim(0, 3000) + ylim(0, 3)
+
+#Base4
+base4 <-
+  ggplot(sale_df, aes(x = gross.square.feet, y = sale.price / 1000000)) +
+  geom_point(colour = rgb(0, 0, 0, 0.1), size = 0.8) +
+  geom_point(
+    aes(x = sale_df$gross.square.feet, y = predict(mod4) / 1000000),
+    colour = rgb(1, 0, 0, 0.2),
+    size = 0.6
+  ) +
+  xlab("Gross Square Feet") + ylab("Sales Price ($MM)") +
+  ggtitle(paste0("Model 4 (BIC = ", round(BIC(mod4)), ")")) +
+  xlim(0, 3000) + ylim(0, 3)
+
+grid.arrange(base1, base2, base3, base4, ncol = 2)
+```
+
+
+
+

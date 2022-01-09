@@ -1,6 +1,6 @@
 ---
 title: "Detroit 1"
-date: 2022-01-27T00:00:00-00:00
+date: 2022-02-10T00:00:00-00:00
 categories: ["R"]
 tags: ["detroit"]
 ---
@@ -10,26 +10,29 @@ knitr::opts_chunk$set(collapse = TRUE,
                       include = FALSE)
 ```
 
-1. Create an RMarkdown file. Set all chunks to show code but not output.
-2. 
+Using the [Detroit Open Data portal](https://data.detroitmi.gov), prepare the [Parcels](https://data.detroitmi.gov/datasets/detroitmi::parcels-2/about)
+and [Sales](https://data.detroitmi.gov/datasets/detroitmi::property-sales-1/about) data sets for analysis. Create a basic descriptive RMarkdown report which analyzes relevant trends and data quality issues. 
+Contextualize your analysis with [key](https://scholarship.law.uci.edu/ucilr/vol9/iss4/3/) [literature](https://harris.uchicago.edu/files/evalrespropertytaxasdetroit20162018.pdf) on properties in Detroit.
 
-[Parcels](https://data.detroitmi.gov/datasets/detroitmi::parcels-2/about)
-[Auctions](https://data.detroitmi.gov/datasets/detroitmi::auction-sales/about)
-[Sales](https://data.detroitmi.gov/datasets/detroitmi::property-sales-1/about)
-
+Construct a classification problem for properties in Detroit and undertake an initial analysis. 
+I suggest that you add an additional data set from the open data portal or another source.
+Searching for *property* data sets in the open data portal includes many property attributes which could be analyzed
+including permits/violations/registrations/rental status/[auctions](https://data.detroitmi.gov/datasets/detroitmi::auction-sales/about)/government owned property.  
 
 ## Assignment
 
-This is a multi-part assignment where you will build upon your previous work each week with new material from the course and feedback. 
+Instead of traditional problem sets, this course has a single four part assignment where you will build upon your previous work each week with new material from the course. 
 You will explore property assessment in Detroit, Michigan and create an assessment model.
 After the completion of the assignment, you will wrap your model into a report which analyzes the effectiveness of your model based on the ethical and other frameworks from class and make a brief presentation to the class.
 
 ## Grading
 
-25% - completes all assignments weekly
+20% - completes all four assignments by deadline (5% per week)
 
-25% - timely incorporation of feedback and new concepts from course
+15% - timely incorporation of feedback and new concepts from course (5% each for assignments 2-4)
 
-25% - brief final presentation
+25% - final code
 
-25% - quality of final submission
+15% - final report
+
+25% - final presentation

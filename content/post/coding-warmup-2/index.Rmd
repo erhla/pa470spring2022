@@ -1,27 +1,138 @@
 ---
 title: "Coding Warmup 2"
-date: 2022-01-13T00:00:00-00:00
+date: 2022-01-27T00:00:00-00:00
 categories: ["R"]
 tags: ["warmup"]
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(collapse = TRUE,
-                      include = FALSE)
+                      include = FALSE,
+                      message = FALSE)
 ```
 
 This assignment is ungraded. I encourage you to review the problems to see if (1) you know how to do them or (2) if you know how to google how to do it. If either path forward escapes you, I suggest that you complete this assignment.
 
 # Part 1
 
-Create an RMarkdown file to use for this assignment. Use html as the output and change at least one option in the yaml. Complete the rest of the assignment using markdown and chunks to create readible code and output.
+Create an RMarkdown file to use for this assignment. Use html as the output and change at least one option in the yaml. Complete the rest of the assignment using markdown and chunks to create readable code and output.
 
 # Part 2
 
-Using [censusreporter.org](censusreporter.org), pick an American Community Survey variable and a geographic area and division (e.g. nationwide and states, statewide and counties, countywide and county subdivisions, or citywide and census tracts).
+Using [censusreporter.org](censusreporter.org), pick an American Community Survey variable and a geographic area and division (e.g. nationwide and states, statewide and county, county and tracts).
 
-Using `tigris`, `tidycensus`, and `leaflet` (encouraged, or your favorite R package for maps), map the variable over your chosen geographic divisions. Select an appropriate pallete, and consider adding popup labels. Write a few sentences describing your map.
+Using `tigris`, `tidycensus`, and `leaflet` (encouraged, or your favorite R package for maps), map the variable over your chosen geographic divisions. Select an appropriate pallete, and consider adding popup labels. Write a few sentences describing your map in Markdown.
+
+```{r}
+library(tidyverse)
+library(tidycensus)
+library(tigris)
+library(sf)
+library(scales)
+library(leaflet)
+
+il19 <- get_acs(geography = "tract", 
+              variables = c(medincome = "B19013_001",
+                            totalpop = "B02001_001",
+                            white_alone = "B02001_002",
+                            black_alone = "B02001_003",
+                            asian_alone = "B02001_004"),
+              state = "IL", 
+              year = 2019,
+              output='wide')
+
+il19 <- il19 %>% mutate(
+  pct_white = white_aloneE / totalpopE,
+  pct_black = black_aloneE / totalpopE,
+  pct_asian = asian_aloneE / totalpopE
+)
+
+iltracts <- tigris::tracts(state='17', year=2019, cb=TRUE)
+
+joined <- iltracts %>% left_join(
+  il19 %>% select(GEOID, pct_white, totalpopE, medincomeE)
+) %>% filter(COUNTYFP == '031') #cook
+
+### make labels
+
+label_str <- str_glue("<strong>Tract %s</strong><br>White Alone (Pct): %s<br/>")
+labels <- sprintf(label_str,
+                joined$NAME,
+                percent(joined$pct_white, accuracy = .1)) %>% 
+  lapply(htmltools::HTML)
+
+### make palette
+
+pal1 <-
+  colorNumeric(
+    palette = "Oranges",
+    domain = joined$pct_white,
+    na.color = "Grey"
+  )
+
+  
+m <- leaflet() %>%
+  addTiles() %>% addPolygons(
+    data = joined,
+    fillColor = ~ pal1(pct_white),
+    weight = 0.5,
+    opacity = 0.5,
+    color = "white",
+    dashArray = 3,
+    fillOpacity = 0.7,
+    highlight = highlightOptions(
+      weight = 5,
+      color = "#666",
+      dashArray = "",
+      fillOpacity = 0.7,
+      bringToFront = TRUE
+    ),
+    label = labels,
+    labelOptions = labelOptions(
+      style = list("font-weight" = "normal", padding = "3px 8px"),
+      textsize = "15px",
+      direction = "auto"
+    )
+  ) %>%
+  addLegend(
+    pal = pal1,
+    values = joined$pct_white,
+    opacity = 0.7,
+    title = NULL,
+    position = "bottomright"
+  )
+  
+
+m
+
+
+```
+
+
 
 # Part 3
+
+Grab another variable for the same geographic area and divisions with the intent of exploring correlation between this variable and the one selected in the previous section. Replicate some of the analysis from [Tidy Modeling Sec 3.1](https://www.tmwr.org/base-r.html#an-example).
+
+```{r}
+ggplot(joined, aes(x=pct_white, y=medincomeE)) +
+  geom_point(alpha=.2) +
+  geom_smooth() +
+  theme_bw() +
+  scale_y_continuous(labels=dollar_format()) +
+  scale_x_continuous(labels = percent_format()) +
+  labs(x='Percent White', y='Median Income', title='Income and Percent White (alone)\nby Tract in Cook County')
+```
+
+
+```{r results='asis'}
+m1 <- lm(medincomeE ~ pct_white + totalpopE, data=joined)
+
+stargazer::stargazer(m1, type='html')
+```
+
+
+
+# Part 4 (optional)
 
 Create a GitHub repository and commit your knitted RMarkdown. Activate GitHub pages and find the appropriate url which serves your html map! Here is an [example](https://erhla.github.io/chicago-population-ward/Estimates.html).
