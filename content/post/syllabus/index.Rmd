@@ -112,6 +112,7 @@ In this course, we will explore critical issues with AI/ML in the public sector 
 
 *Ethical Critiques*
 
+- [It's COMPASlicated: The Messy Relationship between RAI Datasets and Algorithmic Fairness Benchmarks](https://arxiv.org/abs/2106.05498)
 - [Excavating AI](https://excavating.ai/)
 - [Assembling Accountability](https://datasociety.net/wp-content/uploads/2021/06/Assembling-Accountability.pdf)
 - [To Live in Their Utopia: Why Algorithmic Systems Create Absurd Outcomes](https://ali-alkhatib.com/papers/chi/utopia/utopia.pdf)
