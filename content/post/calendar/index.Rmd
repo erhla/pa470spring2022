@@ -24,8 +24,6 @@ In this course, we will explore critical issues with AI/ML in the public sector 
 
 ## Week 1, 1/13 (online)
 
-[Slides](/lectures/week_1.html)
-
 *Introductions, Course Technology Stack, and Review*
 
 - [Can a Machine Learn Morality?](https://www.nytimes.com/2021/11/19/technology/can-a-machine-learn-morality.html)

@@ -1,0 +1,17 @@
+---
+title: "Lectures"
+date: 2022-01-13T00:00:00-00:00
+categories: ["R"]
+publishdate: 2022-01-01T00:00:00-00:00
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE,
+                      include = FALSE)
+```
+
+# Week 1
+
+- [Slides](/lectures/week_1.html)
+- [Code](/lectures/week_1.R)
+- [Zoom, requires log-in](https://uic.zoom.us/rec/share/1zxve9GhpXo03ewLF6nuIT815dEMflUmt5JlzW9TZyOCceCYq82pljPwRmx_q9ey.vMFwpBLBhwRJiPNZ)
