@@ -3,7 +3,10 @@
 .Rapp.history
 
 # Session Data files
-.RData
+*.RData
+*.rdb
+*.rdx
+__packages
 
 # Example code in package build process
 *-Ex.R
@@ -42,3 +45,5 @@ notes.docx
 *.pdf
 ~$notes.docx
 *.png
+
+static/lectures/*.txt

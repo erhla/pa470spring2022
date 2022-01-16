@@ -24,7 +24,7 @@ Using [censusreporter.org](censusreporter.org), pick an American Community Surve
 
 Using `tigris`, `tidycensus`, and `leaflet` (encouraged, or your favorite R package for maps), map the variable over your chosen geographic divisions. Select an appropriate pallete, and consider adding popup labels. Write a few sentences describing your map in Markdown.
 
-```{r}
+```{r, cache=TRUE}
 library(tidyverse)
 library(tidycensus)
 library(tigris)
@@ -132,8 +132,16 @@ m1 <- lm(medincomeE ~ pct_white + totalpopE, data=joined)
 stargazer::stargazer(m1, type='html')
 ```
 
+# Part 4
+
+Complete Exercise 12.3.3. Use [this file](https://github.com/DataScienceForPublicPolicy/build-simulation-data/blob/master/notebooks/raster-simulation.Rmd) to simulate the data.
+
+# Part 5
+
+Consider expanding the divvy example from class with the following:
+
+- approximate trip distance from start/end location
+- show some summary stats by hour or day of week or community area or "rideable" type
+- construct a regression with some combination of the above
 
 
-# Part 4 (optional)
-
-Create a GitHub repository and commit your knitted RMarkdown. Activate GitHub pages and find the appropriate url which serves your html map! Here is an [example](https://erhla.github.io/chicago-population-ward/Estimates.html).

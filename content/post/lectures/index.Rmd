@@ -15,3 +15,13 @@ knitr::opts_chunk$set(collapse = TRUE,
 - [Slides](/lectures/week_1.html)
 - [Code](/lectures/week_1.R)
 - [Zoom, requires log-in](https://uic.zoom.us/rec/share/1zxve9GhpXo03ewLF6nuIT815dEMflUmt5JlzW9TZyOCceCYq82pljPwRmx_q9ey.vMFwpBLBhwRJiPNZ)
+
+# Week 2
+
+- [Slides](/lectures/week_2.html)
+- [Code](/lectures/week_2_spatial.Rmd)
+- [Code Output](/lectures/week_2_spatial.html)
+
+# Week 3
+
+- [Slides](/lectures/week_3.html)
