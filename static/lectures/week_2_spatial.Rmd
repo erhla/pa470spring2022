@@ -51,13 +51,19 @@ rm(ccao)
 
 # Census
 
+## Exploring variables
+
 Starting with the 2020 census...let's look at institutional populations by county.
 
-```{r, include=FALSE, cache=TRUE}
+```{r}
 c20var <- load_variables(2020, "pl")
 
-#lets look at institutional populations by county
+c20var %>% view()
+```
 
+We want to create an sf object which has the counts/values we are interested in showing joined in.
+
+```{r, include=FALSE, cache=TRUE}
 county_pop <- get_decennial("county", variables=c(college_housing_pop = "P5_008N",
                                                   adult_inc = "P5_003N"), 
                             year=2020, 
@@ -67,6 +73,7 @@ counties <- tigris::counties(cb=TRUE)
 county_census <- counties %>% left_join(county_pop, by=c('GEOID'))
 ```
 
+Note that making maps, similar to regular plots, requires thoughtful selection of the area you want to show based on how much information is consumable.
 
 ```{r}
 ggplot(county_census %>% filter(variable == "college_housing_pop"), aes(fill=value)) +
@@ -101,9 +108,17 @@ ggplot(county_census %>% filter(STATEFP %in% c(17, 18, 26, 39, 55)), aes(fill=va
   labs(title="Institutional Populations", fill="")
 ```
 
-# Fancy Maps
+# Fancy Maps / American Community Survey
 
-Checking our data
+Finding variables
+
+[census reporter](https://censusreporter.org/)
+
+```{r, include=FALSE}
+acs19var <- load_variables(2019, "acs5") #acs 5 year
+```
+
+Getting our data together
 
 ```{r, include=FALSE}
 il19 <- get_acs(geography = "tract", 
@@ -142,17 +157,20 @@ mapview(chicago_tracts_acs, alpha=.05, col.regions='green') +
   mapview(chicago)
 ```
 
-Making labels and pallete
+First leaflet map
 
 ```{r}
-### make labels
+leaflet() %>%
+  addTiles() 
 
-label_str <- str_glue("<strong>Tract %s</strong><br>White Alone (Pct): %s<br/>")
-labels <- sprintf(label_str,
-                chicago_tracts_acs$NAME,
-                percent(chicago_tracts_acs$pct_white, accuracy = .1)) %>% 
-  lapply(htmltools::HTML)
+leaflet() %>%
+  addTiles() %>% addPolygons(data = chicago_tracts_acs)
+```
 
+
+Making pallete
+
+```{r}
 ### make palette
 
 pal1 <-
@@ -163,6 +181,31 @@ pal1 <-
   )
 ```
 
+
+```{r}
+leaflet() %>%
+  addTiles() %>% addPolygons(
+    data = chicago_tracts_acs,
+    fillColor = ~ pal1(pct_white),
+    weight = 0.5,
+    opacity = 0.5,
+    color = "white",
+    dashArray = 3,
+    fillOpacity = 0.7)
+```
+
+
+### make labels
+
+```{r}
+label_str <- str_glue("<strong>Tract %s</strong><br>White Alone (Pct): %s<br/>")
+labels <- sprintf(label_str,
+                chicago_tracts_acs$NAME,
+                percent(chicago_tracts_acs$pct_white, accuracy = .1)) %>% 
+  lapply(htmltools::HTML)
+```
+
+Add labels/legend
 
 ```{r}
 m <- leaflet() %>%
@@ -204,6 +247,10 @@ m
 # Spatial Relationships
 
 ## Divvy
+
+[Open data](https://ride.divvybikes.com/system-data)
+
+Divvy by community area
 
 ```{r, cache=TRUE}
 temp <- tempfile()
