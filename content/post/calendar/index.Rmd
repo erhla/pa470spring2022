@@ -48,8 +48,8 @@ In this course, we will explore critical issues with AI/ML in the public sector 
 
 *Coding 1*
 
-- [tidymodels, Chapter 3](https://www.tmwr.org/index.html)
-- Chapters 7 & 8, DSPP
+- [tidymodels, Chapters 3-4](https://www.tmwr.org/index.html)
+- Chapter 7 & Sections 8.1/8.2, DSPP
 
 **Assignment: [Coding Warmup 2](/coding-warmup-2)**
 
@@ -65,6 +65,7 @@ In this course, we will explore critical issues with AI/ML in the public sector 
 - [Cook County Assessor Residential Valuation Model](https://gitlab.com/ccao-data-science---modeling/models/ccao_res_avm)
 - [Summary of Agency Compliance Reporting, NYC Algorithms](https://www1.nyc.gov/assets/ampo/downloads/pdf/AMPO-CY-2020-Agency-Compliance-Reporting.pdf)
 - [Preparing for the Future of Artifical Intelligence](https://obamawhitehouse.archives.gov/sites/default/files/whitehouse_files/microsites/ostp/NSTC/preparing_for_the_future_of_ai.pdf)
+- [Data Driven Information and the brave new world of smart firefighting](https://www.nfpa.org/-/media/Files/News-and-Research/Resources/Research-Foundation/Current-projects/Smart-FF/SmartFFNFPAJournalDataDriven.ashx)
 
 **Assignment: [Reading Response 1, Case Study](/reading-response-1) & [Coding Warmup 3](/coding-warmup-3)**
 
@@ -72,8 +73,7 @@ In this course, we will explore critical issues with AI/ML in the public sector 
 
 *Coding 2*
 
-
-- [tidymodels, Chapter 4-6 Fitting/Linear](https://www.tmwr.org/index.html)
+- [tidymodels, Chapters 5-6 Fitting/Linear](https://www.tmwr.org/index.html)
 - Chapter 9, DSPP
 
 **Assignment: [Detroit Part 1](/detroit-1)**

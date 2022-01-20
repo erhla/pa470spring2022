@@ -21,7 +21,3 @@ knitr::opts_chunk$set(collapse = TRUE,
 - [Slides](/lectures/week_2.html)
 - [Code](/lectures/week_2_spatial.Rmd)
 - [Code Output](/lectures/week_2_spatial.html)
-
-# Week 3
-
-- [Slides](/lectures/week_3.html)
