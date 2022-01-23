@@ -14,6 +14,10 @@ knitr::opts_chunk$set(collapse = TRUE,
 
 This assignment is ungraded. I encourage you to review the problems to see if (1) you know how to do them or (2) if you know how to google how to do it. If either path forward escapes you, I suggest that you complete this assignment.
 
+# Part 0
+
+GitHub (and GitHub Classroom) tutorial. Accept the invitation [here](https://classroom.github.com/a/oLQ628lN).
+
 # Part 1
 
 Create an RMarkdown file to use for this assignment. Use html as the output and change at least one option in the yaml. Complete the rest of the assignment using markdown and chunks to create readable code and output.
