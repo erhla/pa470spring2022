@@ -18,6 +18,7 @@ This assignment is ungraded. I encourage you to review the problems to see if (1
 
 GitHub (and GitHub Classroom) tutorial. Accept the invitation [here](https://classroom.github.com/a/oLQ628lN).
 
+
 # Part 1
 
 Create an RMarkdown file to use for this assignment. Use html as the output and change at least one option in the yaml. Complete the rest of the assignment using markdown and chunks to create readable code and output.
