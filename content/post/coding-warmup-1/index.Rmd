@@ -49,6 +49,9 @@ Using `lubridate`, calculate some information on sales:
 
 ```{r}
 library(lubridate)
+
+ccao %>% select(`Sale Date`)
+
 ccao <- ccao %>% mutate(sdate = mdy_hms(`Sale Date`))
 
 ccao %>% filter(month(sdate) == 1) %>% nrow()
