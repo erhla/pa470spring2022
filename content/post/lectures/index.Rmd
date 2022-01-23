@@ -22,5 +22,3 @@ knitr::opts_chunk$set(collapse = TRUE,
 - [Code](/lectures/week_2_spatial.Rmd)
 - [Code Output](/lectures/week_2_spatial.html)
 - [Zoom, requires log-in](https://uic.zoom.us/rec/share/h6XgGC0LZhG5OPibcxE0x4Q3JWbMLXCl2ybr-DOxlER9ZivfnmbNWYhPXpnxJ4ts.UMyJbIAU5I2Gd9J1 )
-
-
