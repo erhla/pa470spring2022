@@ -44,7 +44,7 @@ In this course, we will explore critical issues with AI/ML in the public sector 
 
 **Assignment: [Coding Warmup 1](/coding-warmup-1)**
 
-## Week 3, 1/27
+## Week 3, 1/27 (online)
 
 *Coding 1*
 
@@ -53,7 +53,7 @@ In this course, we will explore critical issues with AI/ML in the public sector 
 
 **Assignment: [Coding Warmup 2](/coding-warmup-2)**
 
-## Week 4, 2/3
+## Week 4, 2/3 (online)
 
 - Chapter 8, DSPP (continued)
 
@@ -69,7 +69,7 @@ In this course, we will explore critical issues with AI/ML in the public sector 
 
 **Assignment: [Reading Response 1, Case Study](/reading-response-1) & [Coding Warmup 3](/coding-warmup-3)**
 
-## Week 5, 2/10
+## Week 5, 2/10 (online)
 
 *Coding 2*
 

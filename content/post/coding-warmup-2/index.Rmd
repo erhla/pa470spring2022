@@ -30,7 +30,7 @@ Using [censusreporter.org](censusreporter.org), pick an American Community Surve
 
 Using `tigris`, `tidycensus`, and `leaflet` (encouraged, or your favorite R package for maps), map the variable over your chosen geographic divisions. Select an appropriate pallete, and consider adding popup labels. Write a few sentences describing your map in Markdown.
 
-```{r, cache=TRUE}
+```{r}
 library(tidyverse)
 library(tidycensus)
 library(tigris)
