@@ -175,3 +175,4 @@ Note: Present Detroit model
 - [Linguistics 575, UW](https://faculty.washington.edu/ebender/2021_575/#foundations)
 - [CSE 599, UW](https://uw-cse599p.github.io/calendar/)
 - [Satej Soman](https://satejsoman.com/#/)
+- [PPOL 670, Georgetown](https://github.com/SigmaMonstR/data-science)
