@@ -10,7 +10,7 @@ publishdate: 2022-01-01T00:00:00-00:00
 knitr::opts_chunk$set(collapse = TRUE,
                       include = FALSE,
                       message = FALSE,
-                      eval = FALSE)
+                      eval = TRUE)
 ```
 
 This assignment is ungraded. I encourage you to review the problems to see if (1) you know how to do them or (2) if you know how to google how to do it. If either path forward escapes you, I suggest that you complete this assignment.
@@ -149,5 +149,38 @@ Consider expanding the divvy example from class with the following:
 - approximate trip distance from start/end location
 - show some summary stats by hour or day of week or community area or "rideable" type
 - construct a regression with some combination of the above
+```{r}
+temp <- tempfile()
+download.file("https://divvy-tripdata.s3.amazonaws.com/202107-divvy-tripdata.zip", 
+              temp)
+unzip(temp, list=TRUE)
+divvy <- read_csv(unz(temp, "202107-divvy-tripdata.csv"))
+unlink(temp)
+```
+
+
+```{r}
+divvy <- 
+  divvy %>% st_as_sf(coords=c("start_lng", "start_lat"), remove=FALSE)
+
+st_crs(divvy) <- 4326
+
+divvy %>% slice_sample(n=100) %>%
+  st_distance()
+
+dist1 <- divvy %>% as.data.frame() %>%
+  filter(!is.na(start_lng)) %>%
+  rowwise() %>%
+  mutate(distance = geosphere::distHaversine(c(start_lng, start_lat), 
+                                             c(end_lng, end_lat)))
+
+ggplot(dist1 %>% filter(distance/1609 <= 7.5), aes(x=distance/1609)) +
+  geom_histogram() +
+  labs(x='Crow Distance (miles)',
+       y='Rides',
+       title='Divvy Distances July 2021 (Crow)')
+
+```
+
 
 
