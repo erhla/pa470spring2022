@@ -8,7 +8,7 @@ publishdate: 2022-01-01T00:00:00-00:00
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(collapse = TRUE,
-                      include = FALSE,
+                      include = TRUE,
                       message = FALSE,
                       eval = TRUE)
 ```
@@ -141,6 +141,114 @@ stargazer::stargazer(m1, type='html')
 # Part 4
 
 Complete Exercise 12.3.3. Use [this file](https://github.com/DataScienceForPublicPolicy/build-simulation-data/blob/master/notebooks/raster-simulation.Rmd) to simulate the data.
+```{r}
+
+library(raster)
+library(data.table)
+library(tidyverse)
+
+# Number of rows
+nx = 50
+ny = 50
+# Set seed for reproducibility
+set.seed(123)
+
+#Generate data
+#Create combination of all x and y values
+# Create a random normal distribution
+r1 = expand.grid(
+  x = 1:nx,
+  y = 1:ny
+) %T>%
+setDT() %>%
+.[,val := rnorm(n = nx*ny, mean = x + y, sd = sqrt(ny))] %>%
+rasterFromXYZ()
+
+r2 = expand.grid(
+  x = 1:nx,
+  y = 1:ny
+) %T>%
+setDT() %>%
+.[,val := rnorm(n = nx*ny, mean = (-0.5) * x + 2 * y, sd = sqrt(ny))] %>%
+rasterFromXYZ()
+
+r3 = expand.grid(
+  x = 1:nx,
+  y = 1:ny
+) %T>%
+setDT() %>%
+.[,val := rnorm(n = nx*ny, mean = (1) * x - 1.25 * y, sd = sqrt(ny))] %>%
+rasterFromXYZ()
+
+pop_r = expand.grid(
+  x = 1:nx,
+  y = 1:ny
+) %T>%
+setDT() %>%
+.[,val := runif(n = nx*ny, min = 1, max = 100)] %>%
+rasterFromXYZ()
+
+```
+
+
+For each, we standardize the values.
+```{r}
+# Force to same range: 1 to 100
+r1 = r1 - cellStats(r1, min) + 1
+r1 = 100 * r1 / cellStats(r1, max)
+r2 = r2 - cellStats(r2, min) + 1
+r2 = 100 * r2 / cellStats(r2, max)
+r3 = r3 - cellStats(r3, min) + 1
+r3 = 100 * r3 / cellStats(r3, max)
+
+p1 = ggplot(data = as.data.frame(r1, xy = T)) +
+  geom_raster(aes(x, y, fill = val)) +
+  scale_fill_viridis_c("", option = "magma") +
+  guides(fill = guide_colourbar(barwidth = 1, barheight = 15)) +
+  coord_equal() +
+  theme_void() +
+  ggtitle("r1") + 
+  theme(legend.position = "none", plot.title =  element_text(size=10, hjust = 0.5))
+
+p2 = ggplot(data = as.data.frame(r2, xy = T)) +
+  geom_raster(aes(x, y, fill = val)) +
+  scale_fill_viridis_c("", option = "magma") +
+  guides(fill = guide_colourbar(barwidth = 1, barheight = 15)) +
+  coord_equal() +
+  theme_void() +
+  ggtitle("r2") + 
+theme(legend.position = "none", plot.title =  element_text(size=10, hjust = 0.5))
+
+p3 = ggplot(data = as.data.frame(r3, xy = T)) +
+  geom_raster(aes(x, y, fill = val)) +
+  scale_fill_viridis_c("", option = "magma") +
+  guides(fill = guide_colourbar(barwidth = 1, barheight = 15)) +
+  coord_equal() +
+  theme_void() + 
+  ggtitle("r3") 
+p3 = p3 + theme(legend.position = "none", plot.title =  element_text(size=10, hjust = 0.5))
+
+gridExtra::grid.arrange(p1, p2, p3, ncol = 3)
+
+stack(r1, r2, r3) %>% mean()
+
+(r1+r2+r3) / 3
+
+
+r_mean <- stack(r1, r2, r3) %>% mean()
+
+p4 = ggplot(data = as.data.frame(r_mean, xy = T)) +
+  geom_raster(aes(x, y, fill = layer)) +
+  scale_fill_viridis_c("", option = "magma") +
+  guides(fill = guide_colourbar(barwidth = 1, barheight = 15)) +
+  coord_equal() +
+  theme_void() + 
+  ggtitle("r4") 
+p4 = p4 + theme(legend.position = "none", plot.title =  element_text(size=10, hjust = 0.5))
+
+p4
+
+```
 
 # Part 5
 
