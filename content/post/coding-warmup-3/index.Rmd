@@ -44,7 +44,7 @@ summary(reg_est)
 # Part 2
 
 Reproduce this figure from [tidymodels 3.3](https://www.tmwr.org/base-r.html#tidiness-modeling) 
-![](https://www.tmwr.org/figures/base-r-corr-plot-1.svg) with the data from Part 1 replacing mpg with sale price for numeric variables.
+![](images/corr-plot-1.svg) with the data from Part 1 replacing mpg with sale price for numeric variables.
 
 ```{r}
 corr_res <- map(sale_df %>% select(where(is.numeric), -c(sale.price, borough, zip.code)), cor.test, y=sale_df$sale.price)
