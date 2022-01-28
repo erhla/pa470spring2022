@@ -63,7 +63,7 @@ c20var %>% view()
 
 We want to create an sf object which has the counts/values we are interested in showing joined in.
 
-```{r, include=FALSE, cache=TRUE}
+```{r, include=FALSE}
 county_pop <- get_decennial("county", variables=c(college_housing_pop = "P5_008N",
                                                   adult_inc = "P5_003N"), 
                             year=2020, 
@@ -252,7 +252,7 @@ m
 
 Divvy by community area
 
-```{r, cache=TRUE}
+```{r}
 temp <- tempfile()
 download.file("https://divvy-tripdata.s3.amazonaws.com/202107-divvy-tripdata.zip", 
               temp)
@@ -298,7 +298,7 @@ ggplot(community_areas %>% left_join(divvy_counts),
 
 Example from the textbook.
 
-```{r, cache=TRUE}
+```{r}
 station_df <- read_csv("https://github.com/DataScienceForPublicPolicy/diys/raw/main/data/chicago-police-stations.csv")
 crime_df <- read_csv("https://github.com/DataScienceForPublicPolicy/diys/raw/main/data/chicago-crime-2018.csv") 
 

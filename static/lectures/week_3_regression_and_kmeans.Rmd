@@ -39,7 +39,7 @@ Let's look at how the variables are related to each other using `corrr` from `ti
 
 ```{r}
 divvy_data %>%
-  select(-started_hour) %>%
+  dplyr::select(-started_hour) %>%
   corrr::correlate() %>%
   corrr::fashion()
 
@@ -54,7 +54,7 @@ We can see that rides is most correlated with temperature/solar radiation.
 How important might categorical variables be? Let's run an ANOVA (Analysis of Variation) test on hour of day.
 
 ```{r}
-aov(rides ~ hour(started_hour), data=divvy_data) %>% tidy()
+aov(rides ~ hour(started_hour), data=divvy_data) %>% broom::tidy()
 ```
 
 What other time based trends should we consider?
@@ -205,9 +205,10 @@ lm_model <-
            temp + wind + interval_rain + avg_speed, data=train)
 
 preds <- 
-  predict(lm_model, test %>% filter(month(started_hour) >=5)) 
+  predict(lm_model, test %>% filter(month(started_hour) >= 5)) 
 
-test_preds <- lm_model %>% augment(test %>% filter(month(started_hour) >=5))
+test_preds <- lm_model %>% 
+  augment(test %>% filter(month(started_hour) >=5))
 ```
 
 mape (mean absolute percentage error) - avg pct difference b/t forecast and actual
@@ -221,6 +222,8 @@ yardstick::rmse(test_preds,
      truth = rides,
      estimate = .pred)
 
+ggplot(test_preds, aes(x=.pred)) +
+  geom_density()
 ```
 
 This model isn't great. Can you improve it?
