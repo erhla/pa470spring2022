@@ -56,6 +56,7 @@ In this course, we will explore critical issues with AI/ML in the public sector 
 ## Week 4, 2/3 (online)
 
 - Chapter 8, DSPP (continued)
+- [tidymodels, Chapters 5-6 Fitting/Linear](https://www.tmwr.org/index.html)
 
 *Public Sector Case Studies*
 
@@ -73,7 +74,6 @@ In this course, we will explore critical issues with AI/ML in the public sector 
 
 *Coding 2*
 
-- [tidymodels, Chapters 5-6 Fitting/Linear](https://www.tmwr.org/index.html)
 - Chapter 9, DSPP
 
 **Assignment: [Detroit Part 1](/detroit-1)**
