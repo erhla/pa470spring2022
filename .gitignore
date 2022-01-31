@@ -41,8 +41,7 @@ rsconnect/
 .Rprofile
 *.Rproj
 
-notes.docx
-*.pdf
-~$notes.docx
+files/*
+
 
 static/lectures/*.txt
