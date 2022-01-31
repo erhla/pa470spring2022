@@ -1,0 +1,133 @@
+---
+title: "Detroit"
+date: 2022-02-10T00:00:00-00:00
+categories: ["R"]
+tags: ["detroit"]
+publishdate: 2022-02-03T00:00:00-00:00
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<div id="assignment" class="section level2">
+<h2>Assignment</h2>
+<p>Instead of traditional problem sets, this course has a single four part assignment where you will build upon your previous work each week with new material from the course. You will explore property assessment in Detroit, Michigan and create an assessment model. After the completion of the assignment, you will wrap your model into a report which analyzes the effectiveness of your model based on the ethical and other frameworks from class and make a brief presentation to the class.</p>
+</div>
+<div id="submissions" class="section level2">
+<h2>Submissions</h2>
+<p>You will do all of your work for this assignment by creating a repository in <a href="https://classroom.github.com/a/m8Yk_ZMs">GitHub Classroom</a>. Please submit your work via descriptively worded commits such as ‘part 1 final submission.’ I will provide feedback via pull requests so please do not merge/close the pull request.</p>
+</div>
+<div id="part-1-due-210" class="section level2">
+<h2>Part 1 (Due 2/10)</h2>
+<p>You have been tasked with undertaking a multi-part analysis of homes in Detroit, Michigan. You are provided with a database to facilitate this analysis. This database was constructed from the <a href="https://data.detroitmi.gov">Detroit Open Data portal</a> and numerous FOIA requests. More information is included in the databases <em>readme</em>. Note that the database must be downloaded via the link provided in the readme.</p>
+<p>Using <code>part_1.Rmd</code> in the reports folder, edit that file to accomplishes the following tasks:</p>
+<ul>
+<li>Section A: Conduct an exploratory data analysis of homes in Detroit. Offer an overview of relevant trends in the data and data quality issues. Contextualize your analysis with <a href="https://scholarship.law.uci.edu/ucilr/vol9/iss4/3/">key</a> <a href="https://harris.uchicago.edu/files/evalrespropertytaxasdetroit20162018.pdf">literature</a> on properties in Detroit.</li>
+<li>Section B: Use <a href="https://erhla.github.io/cmfproperty/index.html"><code>cmfproperty</code></a> to conduct a sales ratio study across the relevant time period. Note that <code>cmfproperty</code> is designed to produce Rmarkdown reports but <a href="https://erhla.github.io/cmfproperty/articles/cmfproperty.html">use the documentation</a> and insert relevant graphs/figures into your report. Look to make this reproducible since you’ll need these methods to analyze your assessment model later on. Detroit has many sales which are not arm’s length (sold at fair market value) so some sales should be excluded, but which ones?</li>
+<li>Section C: Explore trends and relationships with property sales using simple regressions</li>
+<li>Section D: Explore trends and relationships with foreclosures using simple regressions</li>
+</ul>
+</div>
+<div id="part-2-due-224" class="section level2">
+<h2>Part 2 (Due 2/24)</h2>
+<p>Create <code>part_2.Rmd</code> in the reports folder, copying the yaml/framework from <code>part_1.Rmd</code>.</p>
+<p>Construct a classification problem for homes in Detroit using the blight table. More details to come.</p>
+</div>
+<div id="part-3-due-310" class="section level2">
+<h2>Part 3 (Due 3/10)</h2>
+<p>Create <code>part_3.Rmd</code> in the reports folder, copying the yaml/framework from <code>part_1.Rmd</code>.</p>
+<p>Construct a model to assess properties in Detroit. More details to come.</p>
+</div>
+<div id="part-4-due-317" class="section level2">
+<h2>Part 4 (Due 3/17)</h2>
+<p>Create <code>part_4.Rmd</code> in the reports folder, copying the yaml/framework from <code>part_1.Rmd</code>.</p>
+<p>Test and evaluate your model to assess properties. More details to come.</p>
+</div>
+<div id="final-submission-due-331" class="section level2">
+<h2>Final Submission (Due 3/31)</h2>
+<p>Create <code>final_report.Rmd</code> in the reports folder, copying the yaml/framework from <code>part_1.Rmd</code>.</p>
+<p>Bring together your previous submissions into one cohesive report. This report should offer a brief overview of the problem (assessment), general trends on properties, your model, why your model is better than other models, and any technical or ethical critiques. More details to come.</p>
+</div>
+<div id="grading-overview" class="section level2">
+<h2>Grading Overview</h2>
+<p>For each assignment, you will be graded on substantial completion of the assignment (demonstrated by an attempt of all parts). When submitting parts 2, 3, and 4, you will be additionally graded on your incorporation of feedback, new concepts from the course, or the correction of any flagged issues.</p>
+<p>The assignment will culminate in a final submission of code/report and presentation. Code will be graded based on reproducibility, conceptual understanding, and accuracy. The report will be an Rmarkdown file which knits together graphs, tables, and ethical frameworks. It should be concise (include only relevant information from Parts 1-4). This report will be used to give a five minute presentation to the class on your model and ethnical/technical issues with Detroit property assessment.</p>
+<table>
+<colgroup>
+<col width="9%" />
+<col width="9%" />
+<col width="41%" />
+<col width="38%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Date</th>
+<th>Points</th>
+<th>Category</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>10-Feb</td>
+<td>5</td>
+<td>Substantial Completion (attempted all parts)</td>
+<td>Part 1 Due</td>
+</tr>
+<tr class="even">
+<td>24-Feb</td>
+<td>5</td>
+<td>Substantial Completion (attempted all parts)</td>
+<td>Part 2 Due</td>
+</tr>
+<tr class="odd">
+<td>24-Feb</td>
+<td>5</td>
+<td>Incorporation of Feedback/New Concepts</td>
+<td>From Part 1</td>
+</tr>
+<tr class="even">
+<td>10-Mar</td>
+<td>5</td>
+<td>Substantial Completion (attempted all parts)</td>
+<td>Part 3 Due</td>
+</tr>
+<tr class="odd">
+<td>10-Mar</td>
+<td>5</td>
+<td>Incorporation of Feedback/New Concepts</td>
+<td>From Part 2</td>
+</tr>
+<tr class="even">
+<td>17-Mar</td>
+<td>5</td>
+<td>Substantial Completion (attempted all parts)</td>
+<td>Part 4 Due</td>
+</tr>
+<tr class="odd">
+<td>17-Mar</td>
+<td>5</td>
+<td>Incorporation of Feedback/New Concepts</td>
+<td>From Part 3</td>
+</tr>
+<tr class="even">
+<td>31-Mar</td>
+<td>30</td>
+<td>Final Code</td>
+<td>Reproducible (10), Concepts (10), Accurate (10)</td>
+</tr>
+<tr class="odd">
+<td>31-Mar</td>
+<td>20</td>
+<td>Final Report</td>
+<td>Via Rmarkdown HTML, contextualized analysis and ethics</td>
+</tr>
+<tr class="even">
+<td>31-Mar</td>
+<td>15</td>
+<td>Final Presentation</td>
+<td>5 minute presentation on model and insights</td>
+</tr>
+</tbody>
+</table>
+</div>

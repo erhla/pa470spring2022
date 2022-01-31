@@ -76,7 +76,7 @@ In this course, we will explore critical issues with AI/ML in the public sector 
 
 - Chapter 9, DSPP
 
-**Assignment: [Detroit Part 1](/detroit-1)**
+**Assignment: [Detroit Part 1](/detroit)**
 
 ## Week 6, 2/17
 
@@ -88,7 +88,6 @@ In this course, we will explore critical issues with AI/ML in the public sector 
 - [Using AI and machine learning to reduce government fraud](https://www.brookings.edu/research/using-ai-and-machine-learning-to-reduce-government-fraud/)
 - [Fragile Algorithms and Fallible DecisionMakers: Lessons from the Justice System](https://pubs.aeaweb.org/doi/pdfplus/10.1257/jep.35.4.71)
 - [REPORT: How to make AI work in government and for people, Case Studies](https://www.centreforpublicimpact.org/insights/how-to-make-ai-work-in-government-and-for-people)
-- Chapter 5, Civilian Casualties, Weapons of Math Destruction, Cathy O'Neil (PDF TBD)
 
 **Assignment: [Response 2, Relationships](reading-response-2)**
 
@@ -96,10 +95,11 @@ In this course, we will explore critical issues with AI/ML in the public sector 
 
 *Coding 3*
 
+- [Model Evaluation, Model Selection, and Algorithm Selection in Machine Learning](https://arxiv.org/pdf/1811.12808.pdf)
 - Chapter 10, DSPP
 - [tidymodels, Chapter 7-8 Workflow & Recipies](https://www.tmwr.org/index.html)
 
-**Assignment: Detroit Part 2**
+**Assignment: [Detroit Part 2](/detroit)**
 
 ## Week 8, 3/3
 
@@ -122,7 +122,7 @@ In this course, we will explore critical issues with AI/ML in the public sector 
 
 Note: Introduce final project
 
-**Assignment: [Reading Response 3, Ideals](reading-response-3)**
+**Assignment: [Reading Response 3, Ideals](reading-response-3) & [Detroit Part 3](/detroit)**
 
 ## Week 10, 3/17
 
@@ -131,7 +131,7 @@ Note: Introduce final project
 - [tidymodels, Chapter 10-11 Resampling](https://www.tmwr.org/index.html)
 - Chapter 13, DSPP
 
-**Assignment: Detroit Part 3**
+**Assignment: [Detroit Part 4](/detroit)**
 
 
 ## Week 11, 3/24
@@ -140,21 +140,18 @@ Spring Vacation No Class
 
 ## Week 12, 3/31
 
+*Detroit Presentations*
+
+**Assignment: [Detroit Final Submission & Presentation](/detroit)**
+
+## Week 13, 4/7
+
 *Coding 5*
 
 - [tidymodels, Chapter 12 Tuning, 17 Dimensionality Reduction](https://www.tmwr.org/index.html)
 - Chapter 15, DSPP
-
-**Assignment: Detroit Part 4**
-
-## Week 13, 4/7
-
-*Detroit Presentation*
-
 - [In the Age of AI, Frontline](https://www.youtube.com/watch?v=5dZ_lvDgevk)
 - [Algorithms](https://github.com/TheAlgorithms/Python)
-
-Note: Present Detroit model
 
 ## Week 14, 4/14
 
