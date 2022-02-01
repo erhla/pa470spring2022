@@ -26,6 +26,7 @@ Exercise 7.2.3 from Data Science for Public Policy. Data can be found [here](htt
 
 ```{r}
 library(tidyverse)
+theme_set(theme_bw())
 sale_df <- read_csv("https://raw.githubusercontent.com/DataScienceForPublicPolicy/diys/main/data/home_sales_nyc.csv")
 
 ggplot(data = sale_df, aes(x = gross.square.feet, y = sale.price)) +
@@ -88,6 +89,11 @@ mod4 <-
   lm(sale.price ~ gross.square.feet * factor(borough) + land.square.feet + age,
      data = sale_df)
 
+sale_df <- sale_df %>% mutate(quarter = lubridate::floor_date(sale.date, 'quarter'))
+
+mod5 <- lm(sale.price ~ gross.square.feet * factor(borough) + land.square.feet + age + factor(quarter),
+     data = sale_df)
+
 #Base
 base1 <-
   ggplot(sale_df, aes(x = gross.square.feet, y = sale.price / 1000000)) +
@@ -141,10 +147,89 @@ base4 <-
   xlim(0, 3000) + ylim(0, 3)
 
 grid.arrange(base1, base2, base3, base4, ncol = 2)
+
+broom::glance(mod5)
+broom::tidy(mod5)
 ```
 
 # Part 4
 
 In the class divvy example (see the lectures page for code/files), we had a lot of missing values in our data. We also didn't have a very rigorous treatment of time/seasonality. Explore how impactful these issues are by creating a few different models and comparing the predictions using the workflows we saw from class in parsnip, yardstick, and broom.
+
+```{r}
+divvy_data <- read_csv('https://github.com/erhla/pa470spring2022/raw/main/static/lectures/week_3_data.csv')
+
+grouped <- rsample::initial_split(divvy_data)
+train <- training(grouped)
+test  <- testing(grouped)
+
+lm_model <-
+  parsnip::linear_reg() %>%
+  set_engine("lm") %>%
+  fit(rides ~ solar_rad + factor(hour(started_hour)) + 
+           factor(wday(started_hour)) +
+           factor(month(started_hour)) +
+           temp + wind + interval_rain + avg_speed, data=train)
+preds <- 
+  predict(lm_model, test %>% filter(month(started_hour) >= 5)) 
+
+test_preds <- lm_model %>% 
+  augment(test %>% filter(month(started_hour) >=5))
+
+yardstick::mape(test_preds, 
+     truth = rides,
+     estimate = .pred)
+yardstick::rmse(test_preds, 
+     truth = rides,
+     estimate = .pred)
+
+ggplot(test_preds, aes(x=.pred)) +
+  geom_density()
+```
+
+
+```{r}
+divvy_data <- divvy_data %>%
+  mutate(
+    day = floor_date(started_hour, 'day'),
+    bad_weather = if_else(solar_rad <= 5 & temp <= 5, 1, 0),
+    nice_weather = if_else(solar_rad >= 25 & temp >= 15, 1, 0)
+  )
+
+total_rain <- divvy_data %>% group_by(
+  day
+) %>% summarize(total_precip = sum(interval_rain, na.rm=T))
+
+divvy_data <- divvy_data %>% left_join(total_rain) %>%
+  mutate(rainy_weather = if_else(total_precip > 0, 1, 0))
+
+grouped <- rsample::initial_split(divvy_data)
+train <- training(grouped)
+test  <- testing(grouped)
+
+lm_model <-
+  parsnip::linear_reg() %>%
+  set_engine("lm") %>%
+  fit(rides ~ solar_rad + factor(hour(started_hour)) + 
+        factor(nice_weather) + factor(bad_weather) + factor(rainy_weather) +
+        temp + avg_speed, data=train)
+
+preds <- 
+  predict(lm_model, test %>% filter(month(started_hour) >= 5)) 
+
+test_preds <- lm_model %>% 
+  augment(test %>% filter(month(started_hour) >=5))
+
+yardstick::mape(test_preds, 
+     truth = rides,
+     estimate = .pred)
+yardstick::rmse(test_preds, 
+     truth = rides,
+     estimate = .pred)
+
+ggplot(test_preds, aes(x=.pred)) +
+  geom_density()
+
+```
 
 
