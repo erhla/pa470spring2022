@@ -29,3 +29,9 @@ knitr::opts_chunk$set(collapse = TRUE,
 - [Code](/lectures/week_3_regression_and_kmeans.Rmd)
 - [Code Output](/lectures/week_3_regression_and_kmeans.html)
 - [Zoom, requires log-in](https://uic.zoom.us/rec/share/a1bTqWEmStpxIue8YjjiL3xegtQ9IlLIG8rbbj189YYwBy5uqj2pzaK0YrZpUFkZ.LrBjHiHc8P9Ze3b9 )
+
+# Week 4
+
+- [Slides]
+- [Code](/lectures/week_4.Rmd)
+- [Code Output](/lectures/week_4.html)
