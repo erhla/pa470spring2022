@@ -74,6 +74,8 @@ In this course, we will explore critical issues with AI/ML in the public sector 
 
 *Coding 2*
 
+- [Predictive Tools for Public Safety](https://datasmart.ash.harvard.edu/news/article/predictive-tools-for-public-safety-506)
+- [tidymodels, Chapter 7-8 Workflow & Recipies](https://www.tmwr.org/index.html)
 - Chapter 9, DSPP
 
 **Assignment: [Detroit Part 1](/detroit)**
@@ -81,6 +83,8 @@ In this course, we will explore critical issues with AI/ML in the public sector 
 ## Week 6, 2/17
 
 *Ethics: Government's Black Box*
+
+- [tidymodels, Chapter 9 Effectiveness](https://www.tmwr.org/index.html)
 
 - [A City Is a City — Against the metaphorization of data](https://everestpipkin.medium.com/a-city-is-a-city-against-the-metaphorization-of-data-2139be087a71)
 - [ai.gov](https://www.ai.gov/)
@@ -97,7 +101,7 @@ In this course, we will explore critical issues with AI/ML in the public sector 
 
 - [Model Evaluation, Model Selection, and Algorithm Selection in Machine Learning](https://arxiv.org/pdf/1811.12808.pdf)
 - Chapter 10, DSPP
-- [tidymodels, Chapter 7-8 Workflow & Recipies](https://www.tmwr.org/index.html)
+- [tidymodels, Chapter 10-11 Resampling](https://www.tmwr.org/index.html)
 
 **Assignment: [Detroit Part 2](/detroit)**
 
@@ -106,7 +110,6 @@ In this course, we will explore critical issues with AI/ML in the public sector 
 *Coding 4*
 
 - Chapter 11, DSPP
-- [tidymodels, Chapter 9 Effectiveness](https://www.tmwr.org/index.html)
 
 ## Week 9, 3/10
 
@@ -128,7 +131,6 @@ Note: Introduce final project
 
 *Coding 4*
 
-- [tidymodels, Chapter 10-11 Resampling](https://www.tmwr.org/index.html)
 - Chapter 13, DSPP
 
 **Assignment: [Detroit Part 4](/detroit)**

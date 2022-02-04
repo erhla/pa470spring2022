@@ -8,8 +8,14 @@ publishdate: 2022-01-01T00:00:00-00:00
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(collapse = TRUE,
-                      include = FALSE,
-                      eval = FALSE)
+                      include = TRUE,
+                      eval = TRUE)
+
+library(tidyverse)
+library(tidymodels)
+library(lubridate)
+theme_set(theme_bw())
+
 ```
 
 This assignment is ungraded. I encourage you to review the problems to see if (1) you know how to do them or (2) if you know how to google how to do it. If either path forward escapes you, I suggest that you complete this assignment.
@@ -25,8 +31,7 @@ Exercise 7.2.3 from Data Science for Public Policy. Data can be found [here](htt
 - Graph and regress sale price against gross square feet interpret the results
 
 ```{r}
-library(tidyverse)
-theme_set(theme_bw())
+
 sale_df <- read_csv("https://raw.githubusercontent.com/DataScienceForPublicPolicy/diys/main/data/home_sales_nyc.csv")
 
 ggplot(data = sale_df, aes(x = gross.square.feet, y = sale.price)) +
@@ -166,10 +171,12 @@ test  <- testing(grouped)
 lm_model <-
   parsnip::linear_reg() %>%
   set_engine("lm") %>%
+  set_mode('regression') %>%
   fit(rides ~ solar_rad + factor(hour(started_hour)) + 
            factor(wday(started_hour)) +
            factor(month(started_hour)) +
            temp + wind + interval_rain + avg_speed, data=train)
+
 preds <- 
   predict(lm_model, test %>% filter(month(started_hour) >= 5)) 
 
