@@ -30,7 +30,7 @@ Some more helpful tools.
 Checking model specification
 
 ```{r}
-rand_forest() %>%  set_engine("ranger") %>% 
+parsnip::rand_forest() %>%  set_engine("ranger") %>% 
   set_mode("regression")  %>% translate()
 
 #?rand_forest
@@ -48,9 +48,7 @@ As an aside, what is a random forest? It is an ensemble model (meaning it aggreg
 
 # GLM
 
-
 Let's run a very basic example on [Lending Club data](https://probably.tidymodels.org/articles/where-to-use.html).
-
 
 ```{r}
 library(modeldata)
@@ -64,6 +62,7 @@ lending_club <- lending_club %>%
 lending_club_mini <- lending_club %>%
   select(Class, annual_inc, verification_status, sub_grade)
 
+lending_club_mini %>% count(Class)
 ```
 
 Each row is a loan which is either Classified as good or bad.
@@ -90,7 +89,7 @@ log_model <- logistic_reg() %>%
 
 log_model %>% tidy()
 
-# log_model %>% 
+# log_model %>%
 #   car::vif()
 
 log_model %>% extract_fit_engine() %>%
@@ -102,7 +101,6 @@ Multicollinearity is a big issue. If variables are correlated to both the target
 ```{r}
 preds <- log_model %>%
   predict(test, type='prob')
-
 
 preds <- log_model %>%
   predict(test, type='class')
@@ -116,6 +114,7 @@ We can predict a class metric or a class probability metric (recall from yardsti
 
 ```{r}
 test_preds %>% count(Class, .pred_class)
+ggplot(test_preds, aes(x=.pred_good, color=Class)) + geom_density()
 
 test_preds %>% group_by(Class) %>% summarize(mean(.pred_good), median(.pred_good))
 
@@ -128,15 +127,15 @@ roc_curve(test_preds,
         estimate = .pred_good) %>%
   autoplot()
 
-
-
 specificity(test_preds,
         truth = Class,
-        estimate = .pred_class) 
+        estimate = .pred_class )
 
 sensitivity(test_preds,
         truth = Class,
         estimate = .pred_class)
+
+test_preds %>% count(.pred_class)
 ```
 
 We can see that this model always predicts good, but this model still has some ability to distinguish between classes. We just need to look at setting different probability thresholds. This will be something we explore more as the class goes on so don't worry if this seems complicated! 
@@ -168,9 +167,7 @@ test_preds2 <- test_preds %>%
   mutate(.pred = probably::make_two_class_pred(.pred_good, levels(Class), threshold = max_threshold)) %>%
   select(Class, contains(".pred"))
 
-f_meas(test_preds2,
-        truth = Class,
-        estimate = .pred_class) 
+test_preds2 %>% count(.pred)
 
 precision(test_preds2,
         truth = Class,
@@ -178,12 +175,21 @@ precision(test_preds2,
 recall(test_preds2,
         truth = Class,
         estimate = .pred_class) 
-
+f_meas(test_preds2,
+        truth = Class,
+        estimate = .pred_class) 
 ```
 
 # Regularlized Regression
 
 ```{r}
+
+split <- initial_split(lending_club)
+
+train <- training(split)
+test <- testing(split)
+
+
 log_model2 <- logistic_reg(penalty = 0.1) %>%
   set_engine('glmnet') %>%
   set_mode('classification') %>%
@@ -191,7 +197,6 @@ log_model2 <- logistic_reg(penalty = 0.1) %>%
       data = train)
 
 log_model2 %>% tidy() %>% filter(abs(estimate) > 0)
-
 
 log_model3 <- logistic_reg(penalty = 0.01) %>%
   set_engine('glmnet') %>%
@@ -230,7 +235,5 @@ roc_curve(test_preds_l4,
 roc_auc(test_preds_l4,
         truth = Class,
         estimate = .pred_good)
-
-
 ```
 

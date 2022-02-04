@@ -17,7 +17,7 @@ Instead of traditional problem sets, this course has a single four part assignme
 
 ## Submissions
 
-You will do all of your work for this assignment by creating a repository in [GitHub Classroom](https://classroom.github.com/a/m8Yk_ZMs). Please submit your work via descriptively worded commits such as 'part 1 final submission.' I will provide feedback via pull requests so please do not merge/close the pull request.
+You will do all of your work for this assignment by creating a repository in [GitHub Classroom](https://classroom.github.com/a/m8Yk_ZMs). Please submit your work via descriptively worded commits such as 'part 1 final submission.' I will provide feedback via pull requests so please do not merge/close the pull request. Please add your GitHub username to [this sheet](https://docs.google.com/spreadsheets/d/1XwYqZwJW8L7tJHesI4juo8xlFeXWVi0Kw7B6L450om8/edit?usp=sharing) to facilitate grading.
 
 ## Part 1 (Due 2/10)
 
