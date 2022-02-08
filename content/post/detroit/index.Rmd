@@ -19,7 +19,7 @@ Instead of traditional problem sets, this course has a single four part assignme
 
 You will do all of your work for this assignment by creating a repository in [GitHub Classroom](https://classroom.github.com/a/m8Yk_ZMs). Please submit your work via descriptively worded commits such as 'part 1 final submission.' I will provide feedback via pull requests so please do not merge/close the pull request. Please add your GitHub username to [this sheet](https://docs.google.com/spreadsheets/d/1XwYqZwJW8L7tJHesI4juo8xlFeXWVi0Kw7B6L450om8/edit?usp=sharing) to facilitate grading.
 
-## Part 1 (Due 2/10)
+## Part 1 (Due 2/14, 12pm)
 
 You have been tasked with undertaking a multi-part analysis of homes in Detroit, Michigan. You are provided with a database to facilitate this analysis. This database was constructed from the [Detroit Open Data portal](https://data.detroitmi.gov) and numerous FOIA requests. More information is included in the databases *readme*. Note that the database must be downloaded via the link provided in the readme.
 
@@ -41,7 +41,9 @@ Construct a classification problem for homes in Detroit using the blight table. 
 
 Create `part_3.Rmd` in the reports folder, copying the yaml/framework from `part_1.Rmd`.
 
-Construct a model to assess properties in Detroit. More details to come.
+Construct a model to assess properties in Detroit. More details to come. 
+
+Retrospectively gauge the accuracy of assessments and identify properties which were most likely to be assessed incorrectly. Distill your model into a 'scorecard' type format which would allow someone to calculate by hand their overassessment likelihood.
 
 ## Part 4 (Due 3/17)
 
