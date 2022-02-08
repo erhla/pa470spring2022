@@ -82,9 +82,9 @@ In this course, we will explore critical issues with AI/ML in the public sector 
 
 ## Week 6, 2/17
 
-*Ethics: Government's Black Box*
-
 - [tidymodels, Chapter 9 Effectiveness](https://www.tmwr.org/index.html)
+
+*Ethics: Government's Black Box*
 
 - [A City Is a City — Against the metaphorization of data](https://everestpipkin.medium.com/a-city-is-a-city-against-the-metaphorization-of-data-2139be087a71)
 - [ai.gov](https://www.ai.gov/)
