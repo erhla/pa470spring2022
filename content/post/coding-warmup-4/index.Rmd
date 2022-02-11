@@ -59,7 +59,7 @@ test_preds
 
 Visually inspect the predictions using the code below
 
-```{}
+```{r}
 # log_model, your parnsip model
 # bivariate_train / bivariate_val, data from bivariate
 
@@ -94,7 +94,6 @@ val_preds %>% accuracy(truth = Class,
                       estimate = .pred_class)
 
 
-
 roc_curve(val_preds,
         truth = Class,
         estimate = .pred_One) %>%
@@ -117,7 +116,8 @@ Recall Table 8.4 from the textbook. If necessary, class one can be positive and 
 
 ```{r}
 val_preds %>% conf_mat(truth = Class,
-                      estimate = .pred_class)
+                      estimate = .pred_class) %>%
+  autoplot("heatmap")
 ```
 
 

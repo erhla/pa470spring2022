@@ -42,3 +42,4 @@ knitr::opts_chunk$set(collapse = TRUE,
 - [Slides](https://docs.google.com/presentation/d/1j7S7FDCjgT0UrdzSdFeXVYBo93E6YaBGIcv2UwY1Vi0/edit?usp=sharing)
 - [Code](/lectures/week_5.Rmd)
 - [Code Output](/lectures/week_5.html)
+- [Zoom, requires log-in](https://uic.zoom.us/rec/share/7A1baGspgTMWoz37XxwzDasgvrrFWU090bwiTLQbcq_GZ0rSaeKskXKP4kM6wZDD.CMiw5sXWJaUx0TIa )

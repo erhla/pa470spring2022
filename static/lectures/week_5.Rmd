@@ -130,6 +130,8 @@ divvy_workflow
 divvy_fit <- divvy_workflow %>%
   fit(data=train)
 
+divvy_fit %>% tidy() %>% view()
+
 divvy_preds <- 
   augment(divvy_fit, test)
 ```
@@ -168,8 +170,7 @@ Let's try to improve the model now
 divvy_rec <- recipe(rides ~ ., data=train) %>%
   step_mutate(hour = factor(hour(started_hour)),
               bad_weather = if_else(solar_rad <= 5 & temp <= 5, 1, 0),
-              nice_weather = if_else(solar_rad >= 25 & temp >= 15, 1, 0),
-              ) %>%
+              nice_weather = if_else(solar_rad >= 25 & temp >= 15, 1, 0)) %>%
   step_date(started_hour, features=c("dow", "month")) %>%
   step_holiday(started_hour, holidays = timeDate::listHolidays("US"),
                keep_original_cols = FALSE) %>%
@@ -209,7 +210,6 @@ tree_model <-
   parsnip::decision_tree(tree_depth=5) %>%
   set_engine("rpart") %>%
   set_mode('regression')
-
 
 divvy_workflow <-
   workflow() %>%
