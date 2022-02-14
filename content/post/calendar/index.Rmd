@@ -76,12 +76,12 @@ In this course, we will explore critical issues with AI/ML in the public sector 
 
 - [Predictive Tools for Public Safety](https://datasmart.ash.harvard.edu/news/article/predictive-tools-for-public-safety-506)
 - [tidymodels, Chapter 7-8 Workflow & Recipies](https://www.tmwr.org/index.html)
-- Chapter 9, DSPP
 
-**Assignment: [Detroit Part 1](/detroit)**
+**Assignment: [Detroit Part 1, Due 2/13](/detroit)**
 
 ## Week 6, 2/17
 
+- Chapter 9, DSPP
 - [tidymodels, Chapter 9 Effectiveness](https://www.tmwr.org/index.html)
 
 *Ethics: Government's Black Box*
@@ -100,8 +100,7 @@ In this course, we will explore critical issues with AI/ML in the public sector 
 *Coding 3*
 
 - [Model Evaluation, Model Selection, and Algorithm Selection in Machine Learning](https://arxiv.org/pdf/1811.12808.pdf)
-- Chapter 10, DSPP
-- [tidymodels, Chapter 10-11 Resampling](https://www.tmwr.org/index.html)
+- Sections 10.0-10.4, DSPP
 
 **Assignment: [Detroit Part 2](/detroit)**
 
@@ -109,19 +108,21 @@ In this course, we will explore critical issues with AI/ML in the public sector 
 
 *Coding 4*
 
-- Chapter 11, DSPP
+- Sections 10.5-10.6, DSPP
+- [tidymodels, Chapter 10-11 Resampling](https://www.tmwr.org/index.html)
 
 ## Week 9, 3/10
 
 *Ethical Critiques*
 
+- Chapter 14, DSPP
 - [It's COMPASlicated: The Messy Relationship between RAI Datasets and Algorithmic Fairness Benchmarks](https://arxiv.org/abs/2106.05498)
 - [Excavating AI](https://excavating.ai/)
 - [Assembling Accountability](https://datasociety.net/wp-content/uploads/2021/06/Assembling-Accountability.pdf)
 - [To Live in Their Utopia: Why Algorithmic Systems Create Absurd Outcomes](https://ali-alkhatib.com/papers/chi/utopia/utopia.pdf)
 - [Decolonial AI: Decolonial Theory as Sociotechnical Foresight in Artificial Intelligence](https://arxiv.org/pdf/2007.04068.pdf)
 - [Algorithmic Risk Assessments Can Alter Human Decision-Making Processes in High-Stakes Government Contexts](https://www.benzevgreen.com/wp-content/uploads/2021/08/21-cscw.pdf)
-- Chapter 14, DSPP
+- [Street–Level Algorithms: A Theory at the Gaps Between Policy and Decisions](https://dl.acm.org/doi/pdf/10.1145/3290605.3300760)
 
 Note: Introduce final project
 
@@ -131,7 +132,7 @@ Note: Introduce final project
 
 *Coding 4*
 
-- Chapter 13, DSPP
+- Chapter 11, DSPP
 
 **Assignment: [Detroit Part 4](/detroit)**
 
@@ -159,6 +160,7 @@ Spring Vacation No Class
 
 *Coding 6*
 
+- Chapter 13, DSPP
 - [tidymodels, Chapter 18-20 Understanding Models](https://www.tmwr.org/index.html)
 
 ## Week 15, 4/21
