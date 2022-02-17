@@ -93,7 +93,7 @@ In this course, we will explore critical issues with AI/ML in the public sector 
 - [Fragile Algorithms and Fallible DecisionMakers: Lessons from the Justice System](https://pubs.aeaweb.org/doi/pdfplus/10.1257/jep.35.4.71)
 - [REPORT: How to make AI work in government and for people, Case Studies](https://www.centreforpublicimpact.org/insights/how-to-make-ai-work-in-government-and-for-people)
 
-**Assignment: [Response 2, Relationships](reading-response-2)**
+**Assignment: [Response 2, Relationships](/reading-response-2)**
 
 ## Week 7, 2/24
 
@@ -126,7 +126,7 @@ In this course, we will explore critical issues with AI/ML in the public sector 
 
 Note: Introduce final project
 
-**Assignment: [Reading Response 3, Ideals](reading-response-3) & [Detroit Part 3](/detroit)**
+**Assignment: [Reading Response 3, Ideals](/reading-response-3) & [Detroit Part 3](/detroit)**
 
 ## Week 10, 3/17
 
