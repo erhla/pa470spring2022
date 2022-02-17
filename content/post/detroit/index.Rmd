@@ -30,18 +30,40 @@ Using `part_1.Rmd` in the reports folder, edit that file to accomplishes the fol
 - Section C: Explore trends and relationships with property sales using simple regressions
 - Section D: Explore trends and relationships with foreclosures using simple regressions
 
-## Part 2 (Due 2/24)
+## Part 2 (Due 2/27, 11:59pm)
 
-Create `part_2.Rmd` in the reports folder, copying the yaml/framework from `part_1.Rmd`.
+Objective: Now that you have a decent understanding of the landscape in Detroit, create a new file (part_2.Rmd) which builds upon part_1 in the html report Rmarkdown style.
 
-Construct a classification problem for homes in Detroit using the blight table. More details to come.
+Submission: submit to Blackboard both your code and the knitted Rmarkdown output.
 
+Part A
+
+Create an 'introduction' to your report. Generally, only include stylized output (do not use base R print). This could mean using stargazer to show regressions, DT::datatable to show data.frames, and adding titles/labels to plots. Your introduction should include:
+
+1. Brief background (2-3 sentences) on issues in the Detroit assessment space
+2. 3 to 4 graphs with descriptive captions which include information on sale price, assessment accuracy, foreclosures, and outliers. Generally focus on single family homes and arm's length transactions. While it is notable that so many properties are sold for small amounts, we typically only want to look at properties which are class 401, taxable (e.g. assessed over 2000 or so), and sell above $4,000.
+
+Part B
+
+We have two separate (but very related) problems we want to model. First, we want to find a way to identify if a home is likely to be overassessed in a given year. We will analyze homes and assessments from 2016. We will use tidymodels to create a workflow.
+
+1. Create your workflow
+2. Add to your workflow a classification model
+3. Add to your workflow a recipe of preprocessing steps. Use 2016 sales and assessments with the parcels property characteristics (note that we only know if a home was overassessed if it sold). Create a classification metric of overassessment based on properties which sold and use this as your independent variable. Explain how you decided to construct this metric and how many classes it has.
+4. Create testing/training data and evaluate your model using the classification metrics from tables 8.3 and 8.4 from the textbook and the classification probability metric ROC curves.
+
+Part C
+
+Second, building off of the workflow from part B. Create a second model to create your own 2019 assessments. (Note that I am choosing this year to avoid impacts from the pandemic and data quality issues. You may, if you'd like, create 2022 assessments. Limited sales data is released [here](https://detroitmi.gov/departments/office-chief-financial-officer/ocfo-divisions/office-assessor/sales-study).)
+
+1. Create your workflow
+2. Add to your workflow a model
+3. Add to your workflow a recipe of preprocessing steps. Use sales and assessments from before 2019 with the parcels property characteristics.
+4. Create testing/training data and evaluate your model using numeric metrics RMSE and MAPE.
 
 ## Part 3 (Due 3/10)
 
 Create `part_3.Rmd` in the reports folder, copying the yaml/framework from `part_1.Rmd`.
-
-Construct a model to assess properties in Detroit. More details to come. 
 
 Retrospectively gauge the accuracy of assessments and identify properties which were most likely to be assessed incorrectly. Distill your model into a 'scorecard' type format which would allow someone to calculate by hand their overassessment likelihood.
 
