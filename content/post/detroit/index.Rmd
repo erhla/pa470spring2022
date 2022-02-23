@@ -49,7 +49,7 @@ We have two separate (but very related) problems we want to model. First, we wan
 
 1. Create your workflow
 2. Add to your workflow a classification model
-3. Add to your workflow a recipe of preprocessing steps. Use 2016 sales and assessments with the parcels property characteristics (note that we only know if a home was overassessed if it sold). Create a classification metric of overassessment based on properties which sold and use this as your independent variable. Explain how you decided to construct this metric and how many classes it has.
+3. Add to your workflow a recipe of preprocessing steps. Use 2016 sales and assessments with the parcels property characteristics (note that we only know if a home was overassessed if it sold). Create a classification metric of overassessment based on properties which sold and use this as your **dependent** variable. Explain how you decided to construct this metric and how many classes it has.
 4. Create testing/training data and evaluate your model using the classification metrics from tables 8.3 and 8.4 from the textbook and the classification probability metric ROC curves.
 
 Part C
