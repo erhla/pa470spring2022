@@ -45,3 +45,4 @@ files/*
 
 
 static/lectures/*.txt
+static/solutions/database
