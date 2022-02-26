@@ -30,8 +30,8 @@ Using `part_1.Rmd` in the reports folder, edit that file to accomplishes the fol
 - Section C: Explore trends and relationships with property sales using simple regressions
 - Section D: Explore trends and relationships with foreclosures using simple regressions
 
-## [Part 1 Solution](/solutions/part_1.Rmd)
-## [Part 1 Html](/solutions/part_1.html)
+## [Part 1 Example](/solutions/part_1.Rmd)
+## [Part 1 Example HTML](/solutions/part_1.html)
 
 
 ## Part 2 (Due 2/27, 11:59pm)
