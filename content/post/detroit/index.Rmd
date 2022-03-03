@@ -56,6 +56,9 @@ We have two separate (but very related) problems we want to model. First, we wan
 3. Add to your workflow a recipe of preprocessing steps. Use 2016 sales and assessments with the parcels property characteristics (note that we only know if a home was overassessed if it sold). Create a classification metric of overassessment based on properties which sold and use this as your **dependent** variable. Explain how you decided to construct this metric and how many classes it has.
 4. Create testing/training data and evaluate your model using the classification metrics from tables 8.3 and 8.4 from the textbook and the classification probability metric ROC curves.
 
+## [Part 2 Example](/solutions/part_2.Rmd)
+## [Part 2 Example HTML](/solutions/part_2.html)
+
 Part C
 
 Second, building off of the workflow from part B. Create a second model to create your own 2019 assessments. (Note that I am choosing this year to avoid impacts from the pandemic and data quality issues. You may, if you'd like, create 2022 assessments. Limited sales data is released [here](https://detroitmi.gov/departments/office-chief-financial-officer/ocfo-divisions/office-assessor/sales-study).)
@@ -65,15 +68,11 @@ Second, building off of the workflow from part B. Create a second model to creat
 3. Add to your workflow a recipe of preprocessing steps. Use sales and assessments from before 2019 with the parcels property characteristics.
 4. Create testing/training data and evaluate your model using numeric metrics RMSE and MAPE.
 
-## Part 3 (Due 3/10)
+## Part 3 (Due 3/17)
 
 Create `part_3.Rmd` in the reports folder, copying the yaml/framework from `part_1.Rmd`.
 
 Retrospectively gauge the accuracy of assessments and identify properties which were most likely to be assessed incorrectly. Distill your model into a 'scorecard' type format which would allow someone to calculate by hand their overassessment likelihood.
-
-## Part 4 (Due 3/17)
-
-Create `part_4.Rmd` in the reports folder, copying the yaml/framework from `part_1.Rmd`.
 
 Test and evaluate your model to assess properties. More details to come.
 
@@ -94,11 +93,9 @@ The assignment will culminate in a final submission of code/report and presentat
 |-----------|-----------|----------------------------------------------|-------------------------------------------|
 | 10-Feb | 5      | Substantial Completion (attempted all parts) | Part 1 Due                                                                      |
 | 24-Feb | 5      | Substantial Completion (attempted all parts) | Part 2 Due                                                                      |
-| 24-Feb | 5      | Incorporation of Feedback/New Concepts       | From Part 1                                                                     |
-| 10-Mar | 5      | Substantial Completion (attempted all parts) | Part 3 Due                                                                      |
-| 10-Mar | 5      | Incorporation of Feedback/New Concepts       | From Part 2                                                                     |
-| 17-Mar | 5      | Substantial Completion (attempted all parts) | Part 4 Due                                                                      |
-| 17-Mar | 5      | Incorporation of Feedback/New Concepts       | From Part 3                                                                     |
+| 24-Feb | 5      | Incorporation of Feedback/New Concepts       | From Part 1                                                                     |                                                         |
+| 17-Mar | 10      | Substantial Completion (attempted all parts) | Part 3 Due                                                                      |
+| 17-Mar | 10      | Incorporation of Feedback/New Concepts       | From Part 2                                                                     |
 | 31-Mar | 30     | Final Code                                   | Reproducible (10), Concepts (10), Accurate (10)                                 |
 | 31-Mar | 20     | Final Report                                 | Via Rmarkdown HTML, contextualized analysis and ethics |
 | 31-Mar | 15     | Final Presentation                           | 5 minute presentation on model and insights                                     |

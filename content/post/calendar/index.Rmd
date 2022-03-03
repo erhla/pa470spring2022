@@ -116,25 +116,28 @@ In this course, we will explore critical issues with AI/ML in the public sector 
 *Ethical Critiques*
 
 - Chapter 14, DSPP
+
+### Read 4
+
 - [It's COMPASlicated: The Messy Relationship between RAI Datasets and Algorithmic Fairness Benchmarks](https://arxiv.org/abs/2106.05498)
 - [Excavating AI](https://excavating.ai/)
 - [Assembling Accountability](https://datasociety.net/wp-content/uploads/2021/06/Assembling-Accountability.pdf)
 - [To Live in Their Utopia: Why Algorithmic Systems Create Absurd Outcomes](https://ali-alkhatib.com/papers/chi/utopia/utopia.pdf)
 - [Decolonial AI: Decolonial Theory as Sociotechnical Foresight in Artificial Intelligence](https://arxiv.org/pdf/2007.04068.pdf)
 - [Algorithmic Risk Assessments Can Alter Human Decision-Making Processes in High-Stakes Government Contexts](https://www.benzevgreen.com/wp-content/uploads/2021/08/21-cscw.pdf)
-- [Street–Level Algorithms: A Theory at the Gaps Between Policy and Decisions](https://dl.acm.org/doi/pdf/10.1145/3290605.3300760)
+
 
 Note: Introduce final project
 
-**Assignment: [Reading Response 3, Ideals](/reading-response-3) & [Detroit Part 3](/detroit)**
+**Assignment: [Reading Response 3, Ideals](/reading-response-3)**
 
 ## Week 10, 3/17
 
 *Coding 4*
 
-- Chapter 11, DSPP
+- [tidymodels, Tuning Chapter 12-15](https://www.tmwr.org/index.html)
 
-**Assignment: [Detroit Part 4](/detroit)**
+**Assignment: [Detroit Part 3](/detroit)**
 
 
 ## Week 11, 3/24
@@ -151,10 +154,11 @@ Spring Vacation No Class
 
 *Coding 5*
 
-- [tidymodels, Chapter 12 Tuning, 17 Dimensionality Reduction](https://www.tmwr.org/index.html)
-- Chapter 15, DSPP
+- Chapter 11, DSPP
 - [In the Age of AI, Frontline](https://www.youtube.com/watch?v=5dZ_lvDgevk)
-- [Algorithms](https://github.com/TheAlgorithms/Python)
+- [Street–Level Algorithms: A Theory at the Gaps Between Policy and Decisions](https://dl.acm.org/doi/pdf/10.1145/3290605.3300760)
+- [tidymodels, Chapter 16 Dimensionality Reduction](https://www.tmwr.org/index.html)
+
 
 ## Week 14, 4/14
 
@@ -166,6 +170,9 @@ Spring Vacation No Class
 ## Week 15, 4/21
 
 *Public Sector Careers*
+
+- Ch 5 Weapons of Math Destruction, on Blackboard
+- Chapter 15, DSPP
 
 ## Week 16, 4/28
 
