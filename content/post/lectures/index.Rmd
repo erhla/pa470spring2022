@@ -60,3 +60,4 @@ knitr::opts_chunk$set(collapse = TRUE,
 
 - [Code](/lectures/week_8.Rmd)
 - [Code Output](/lectures/week_8.html)
+- [Zoom, requires log-in](https://uic.zoom.us/rec/share/M11yFD2dHL4qp2R5fAwEVEpIknhhHWE2g99k-gldeALiRw3_OyC6ZP20VMBVEBJh.AO-IWus9ECuWKlno)

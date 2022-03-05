@@ -257,7 +257,7 @@ cor_output %>%
 
 Since we don't have a lot of arm's length sales in 2016 (about 4200), we may want to use a training method which resamples our data. Initially, I will use 10-fold cross validation to train and aggregate ten models. For our classification model, we will initially use a random forest of 500 trees. More on that later.
 
-### Recipie
+### recipe
 
 ```{}
 recipe(class ~ 
@@ -307,7 +307,7 @@ class_model <-
   set_engine('ranger')
 
 
-class_recipie <- recipe(class + class2 + class3 ~ 
+class_recipe <- recipe(class + class2 + class3 ~ 
                           parcel_num + total_square_footage + ASSESSED_VALUE +
                          year_built + X + Y, 
                        data=joined_classification) %>%
@@ -316,9 +316,16 @@ class_recipie <- recipe(class + class2 + class3 ~
   step_interact(~c(ASSESSED_VALUE, total_square_footage, X, Y)) %>%
   step_impute_linear(total_square_footage, year_built, X, Y) %>%
   step_ns(X, Y, deg_free = 20) %>%
+  step_corr(all_predictors()) %>%
   prep()
 
-class_recipie %>% summary()
+class_recipe
+
+class_recipe %>% summary() %>% view()
+
+bake(class_recipe,
+     joined_classification) %>% view()
+
 ```
 
 ## Specification 1, Multi Class
@@ -327,7 +334,7 @@ class_recipie %>% summary()
 first_workflow <-
   workflow() %>%
   add_model(class_model) %>%
-  add_recipe(class_recipie %>%
+  add_recipe(class_recipe %>%
                update_role(class2, new_role='not used') %>%
                update_role(class3, new_role='not used'))
 model_fit <- first_workflow %>%
@@ -358,7 +365,7 @@ Our model has pretty mediocre accuracy of `r str_glue("{our_results %>% filter(.
 second_workflow <-
   workflow() %>%
   add_model(class_model) %>%
-  add_recipe(class_recipie %>%
+  add_recipe(class_recipe %>%
                update_role(class, new_role='not used') %>%
                update_role(class3, new_role='not used'))
 model_fit2 <- second_workflow %>%
@@ -387,7 +394,7 @@ Better but not great still!
 third_workflow <-
   workflow() %>%
   add_model(class_model) %>%
-  add_recipe(class_recipie %>%
+  add_recipe(class_recipe %>%
                update_role(class, new_role='not used') %>%
                update_role(class2, new_role='not used'))
 model_fit3 <- third_workflow %>%
@@ -469,6 +476,8 @@ reg_recipe <- recipe(sp_log ~ total_square_footage +
   step_dummy(all_nominal(), one_hot = TRUE) %>%
   prep()
 
+reg_recipe %>% bake(train)
+
 reg_workflow <-
   workflow() %>%
   add_model(reg_model) %>%
@@ -504,7 +513,7 @@ multi_metric(our_preds, truth=sp_log, estimate=.pred) %>%
 Actual assessments:
 
 ```{r}
-multi_metric(our_preds, truth=log10(2*ASSESSED_VALUE), estimate=.pred) %>%
+multi_metric(our_preds, truth=sp_log, estimate=log10(2*ASSESSED_VALUE)) %>%
   kableExtra::kable() %>%
   kableExtra::kable_material(c("striped", "hover"))
 ```
