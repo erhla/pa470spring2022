@@ -68,13 +68,45 @@ Second, building off of the workflow from part B. Create a second model to creat
 3. Add to your workflow a recipe of preprocessing steps. Use sales and assessments from before 2019 with the parcels property characteristics.
 4. Create testing/training data and evaluate your model using numeric metrics RMSE and MAPE.
 
-## Part 3 (Due 3/17)
+## Part 3 (Due 3/20, 11:59pm)
 
 Create `part_3.Rmd` in the reports folder, copying the yaml/framework from `part_1.Rmd`.
 
-Retrospectively gauge the accuracy of assessments and identify properties which were most likely to be assessed incorrectly. Distill your model into a 'scorecard' type format which would allow someone to calculate by hand their overassessment likelihood.
+**NOTE: I have updated [the database](https://uic365-my.sharepoint.com/:u:/g/personal/erhlango_uic_edu/EaeVtM_p_eVEjzAHixZ5YrQBAUpI2nPtvgXcpYoJr1ZT3Q) with a new table, `attributes`, which includes better property characteristic information.** 
 
-Test and evaluate your model to assess properties. More details to come.
+Rough codebook:
+
+```{}
+exterior, (1 siding, 2 brick/other, 3 brick, 4 other)
+bath, (1 1.0, 2 1.5, 3 2 to 3, 4 3+)
+height, (1 1 to 1.5, 2 1.5 to 2.5, 3 3+)
+```
+
+### Part A (20%)
+
+Begin to finalize your report by only including report/website quality output. By this, only include stylized output (do not use base R print). Avoid any package loading or other incidential inclusion of output in your report. This could mean using stargazer to show regressions, DT::datatable to show data.frames, and adding titles/labels to plots. Give all plots and tables appropriate captions. Write two to three sentence introductions for the different sections of your report. Your report should introduce property assessment in Detroit, Michigan (as defined in part 2A), your two prediction models (from 2B and 2C), and a conclusion. 
+
+### Part B (20%)
+
+Feature engineering. You have now created two base models and evaluation metrics from last week. Investigate creating at least two new predictors and analyze if they improve your model. Some possibilities:
+
+- Neighborhood foreclosures/blight tickets
+- Previous rates of assessment (part B only)
+- Census variables (such as income, race)
+- Neighborhood demolition of homes (look at how many class 401 properties w/ nonzero assessment by year) 
+- Sale price per square foot for neighborhood
+
+### Part C (20%)
+
+Prediction. Create out of sample predictions for both models. By this, predict overassessment and assessment/valuation for homes which did not sell for each model (2016 for B, 2019 for C). Note if you are having trouble with this step that you cannot use any information specific to the sale of a property for out-of-sample prediction.
+
+### Part D (40%)
+
+Model Explanation. Each model has different tools for explainability and we will discuss this more in class. Undertake this initial work knowing that we will gain more techniques for this later on.
+
+For Model B/overassessment, aggregate your predictions by census tract. Join in a census variable. Create a simple correlation plot and leaflet map of likelihood of overassessment by tract using the template for class.
+
+For Model C/assessment, undertake an initial analysis of which factors your model identified as most important for valuation. 
 
 ## Final Submission (Due 3/31)
 

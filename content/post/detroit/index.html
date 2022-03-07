@@ -67,11 +67,39 @@ publishdate: 2022-02-02T00:00:00-00:00
 <li>Create testing/training data and evaluate your model using numeric metrics RMSE and MAPE.</li>
 </ol>
 </div>
-<div id="part-3-due-317" class="section level2">
-<h2>Part 3 (Due 3/17)</h2>
+<div id="part-3-due-320-1159pm" class="section level2">
+<h2>Part 3 (Due 3/20, 11:59pm)</h2>
 <p>Create <code>part_3.Rmd</code> in the reports folder, copying the yaml/framework from <code>part_1.Rmd</code>.</p>
-<p>Retrospectively gauge the accuracy of assessments and identify properties which were most likely to be assessed incorrectly. Distill your model into a ‘scorecard’ type format which would allow someone to calculate by hand their overassessment likelihood.</p>
-<p>Test and evaluate your model to assess properties. More details to come.</p>
+<p><strong>NOTE: I have updated <a href="https://uic365-my.sharepoint.com/:u:/g/personal/erhlango_uic_edu/EaeVtM_p_eVEjzAHixZ5YrQBAUpI2nPtvgXcpYoJr1ZT3Q">the database</a> with a new table, <code>attributes</code>, which includes better property characteristic information.</strong></p>
+<p>Rough codebook:</p>
+<pre><code>exterior, (1 siding, 2 brick/other, 3 brick, 4 other)
+bath, (1 1.0, 2 1.5, 3 2 to 3, 4 3+)
+height, (1 1 to 1.5, 2 1.5 to 2.5, 3 3+)</code></pre>
+<div id="part-a-20" class="section level3">
+<h3>Part A (20%)</h3>
+<p>Begin to finalize your report by only including report/website quality output. By this, only include stylized output (do not use base R print). Avoid any package loading or other incidential inclusion of output in your report. This could mean using stargazer to show regressions, DT::datatable to show data.frames, and adding titles/labels to plots. Give all plots and tables appropriate captions. Write two to three sentence introductions for the different sections of your report. Your report should introduce property assessment in Detroit, Michigan (as defined in part 2A), your two prediction models (from 2B and 2C), and a conclusion.</p>
+</div>
+<div id="part-b-20" class="section level3">
+<h3>Part B (20%)</h3>
+<p>Feature engineering. You have now created two base models and evaluation metrics from last week. Investigate creating at least two new predictors and analyze if they improve your model. Some possibilities:</p>
+<ul>
+<li>Neighborhood foreclosures/blight tickets</li>
+<li>Previous rates of assessment (part B only)</li>
+<li>Census variables (such as income, race)</li>
+<li>Neighborhood demolition of homes (look at how many class 401 properties w/ nonzero assessment by year)</li>
+<li>Sale price per square foot for neighborhood</li>
+</ul>
+</div>
+<div id="part-c-20" class="section level3">
+<h3>Part C (20%)</h3>
+<p>Prediction. Create out of sample predictions for both models. By this, predict overassessment and assessment/valuation for homes which did not sell for each model (2016 for B, 2019 for C). Note if you are having trouble with this step that you cannot use any information specific to the sale of a property for out-of-sample prediction.</p>
+</div>
+<div id="part-d-40" class="section level3">
+<h3>Part D (40%)</h3>
+<p>Model Explanation. Each model has different tools for explainability and we will discuss this more in class. Undertake this initial work knowing that we will gain more techniques for this later on.</p>
+<p>For Model B/overassessment, aggregate your predictions by census tract. Join in a census variable. Create a simple correlation plot and leaflet map of likelihood of overassessment by tract using the template for class.</p>
+<p>For Model C/assessment, undertake an initial analysis of which factors your model identified as most important for valuation.</p>
+</div>
 </div>
 <div id="final-submission-due-331" class="section level2">
 <h2>Final Submission (Due 3/31)</h2>
