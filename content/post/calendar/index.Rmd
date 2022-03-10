@@ -127,7 +127,7 @@ In this course, we will explore critical issues with AI/ML in the public sector 
 - [Algorithmic Risk Assessments Can Alter Human Decision-Making Processes in High-Stakes Government Contexts](https://www.benzevgreen.com/wp-content/uploads/2021/08/21-cscw.pdf)
 
 
-Note: Introduce final project
+Note: Introduce [final project](/final-project)
 
 **Assignment: [Reading Response 3, Ideals](/reading-response-3)**
 
@@ -146,6 +146,7 @@ Spring Vacation No Class
 
 ## Week 12, 3/31
 
+
 *Detroit Presentations*
 
 **Assignment: [Detroit Final Submission & Presentation](/detroit)**
@@ -159,6 +160,7 @@ Spring Vacation No Class
 - [Street–Level Algorithms: A Theory at the Gaps Between Policy and Decisions](https://dl.acm.org/doi/pdf/10.1145/3290605.3300760)
 - [tidymodels, Chapter 16 Dimensionality Reduction](https://www.tmwr.org/index.html)
 
+**Assignment: [Final Project Proposal](/final-project), Due 4/4**
 
 ## Week 14, 4/14
 
