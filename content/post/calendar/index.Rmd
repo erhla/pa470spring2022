@@ -149,6 +149,9 @@ Spring Vacation No Class
 
 *Detroit Presentations*
 
+- [tidymodels, Chapter 18 Understanding Models](https://www.tmwr.org/index.html)
+
+
 **Assignment: [Detroit Final Submission & Presentation](/detroit)**
 
 ## Week 13, 4/7
@@ -158,7 +161,6 @@ Spring Vacation No Class
 - Chapter 11, DSPP
 - [In the Age of AI, Frontline](https://www.youtube.com/watch?v=5dZ_lvDgevk)
 - [Street–Level Algorithms: A Theory at the Gaps Between Policy and Decisions](https://dl.acm.org/doi/pdf/10.1145/3290605.3300760)
-- [tidymodels, Chapter 16 Dimensionality Reduction](https://www.tmwr.org/index.html)
 
 **Assignment: [Final Project Proposal](/final-project), Due 4/4**
 
@@ -167,7 +169,8 @@ Spring Vacation No Class
 *Coding 6*
 
 - Chapter 13, DSPP
-- [tidymodels, Chapter 18-20 Understanding Models](https://www.tmwr.org/index.html)
+- [tidymodels, Chapter 16, 19, 20](https://www.tmwr.org/index.html)
+
 
 ## Week 15, 4/21
 
