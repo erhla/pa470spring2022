@@ -104,7 +104,7 @@ Prediction. Create out of sample predictions for both models. By this, predict o
 
 Model Explanation. Each model has different tools for explainability and we will discuss this more in class. Undertake this initial work knowing that we will gain more techniques for this later on.
 
-For Model B/overassessment, aggregate your predictions by census tract. Join in a census variable. Create a simple correlation plot and leaflet map of likelihood of overassessment by tract using the template for class.
+For Model B/overassessment, aggregate your predictions by census tract. Join in a census variable. Create a simple correlation plot and create a representation of the geographic variance in your predictions (this could be a leaflet map by census tract for example).
 
 For Model C/assessment, undertake an initial analysis of which factors your model identified as most important for valuation. 
 
