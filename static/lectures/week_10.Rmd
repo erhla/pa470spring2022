@@ -139,6 +139,8 @@ Setting neighbors to tune tags the parameter for optimization.
 
 ```{r}
 extract_parameter_set_dials(knn_model_to_tune)
+
+extract_parameter_dials(knn_model_to_tune, 'neighbors')
 ```
 
 The results show a value of `nparam[+]`, indicating that the number of hidden units is a *numeric* parameter.
@@ -400,7 +402,6 @@ The `control` argument now uses the results of `control_bayes()`. Some helpful a
 
 
 ```{r}
-
 svm_rec <- 
   recipe(class ~ ., data = cells) %>%
   step_YeoJohnson(all_numeric_predictors()) %>%

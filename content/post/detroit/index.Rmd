@@ -112,13 +112,134 @@ For Model C/assessment, undertake an initial analysis of which factors your mode
 
 Create `final_report.Rmd` in the reports folder, copying the yaml/framework from `part_1.Rmd`.
 
-Bring together your previous submissions into one cohesive report. This report should offer a brief overview of the problem (assessment), general trends on properties, your model, why your model is better than other models, and any technical or ethical critiques. More details to come.
+Bring together your previous submissions into one cohesive report. This report should offer a brief overview of the problem (assessment), general trends on properties, your model, why your model is better than other models, and any technical or ethical critiques. 
+
+Your final submission will build upon your part 3 submission by 'switching out' the model you use and adding a conclusion.
+
+### Part A, New Assessment Models
+
+Mirror Section 15.3 from the textbook for your assessment model only!
+
+- Create a `workflow_set()` of three different model types. You may choose any which are comparable with `tidymodels`. Suggested models and tuning parameters below. I **encourage** you to consider using one model not from this list, but that is optional.
+
+```
+linear_reg_spec <- 
+   linear_reg(penalty = tune(), mixture = tune()) %>% 
+   set_engine("glmnet")
+   
+rf_spec <- 
+   rand_forest(mtry = tune(), min_n = tune(), trees = 1000) %>% 
+   set_engine("ranger") %>% 
+   set_mode("regression")
+   
+xgb_spec <- 
+   boost_tree(tree_depth = tune(), learn_rate = tune(), loss_reduction = tune(), 
+              min_n = tune(), sample_size = tune(), trees = tune()) %>% 
+   set_engine("xgboost") %>% 
+   set_mode("regression")
+   
+my_set <- workflow_set(
+  preproc = your_recipie,
+  models = list(linear_reg = linear_reg_spec, random_forest = rf_spec, boosted = xgb_spec)
+)
+```
+
+The textbook applies slightly different preprocessing steps to these models, but they should work reasonably well with your current recipe. If you have any compatability issues, I recommend starting with a simple recipe and adding things back one at a time.
+
+- Now, apply `workflow_map()` to your `workflow_set()`. You should resample your testing data and create a small grid. Please use at least 3 resamples and a grid of at least 5. This may take a long time (10+ minutes). I recommend starting very small and gradually increasing your resamples/grid. Note that I've included verbose = TRUE here to help you debug, please do not include this output in your final project.
+
+```
+grid_ctrl <-
+   control_grid(
+      save_pred = TRUE,
+      save_workflow = TRUE
+   )
+
+grid_results <-
+   my_set %>%
+   workflow_map(
+      seed = 1503,
+      resamples = your_samples,
+      grid = 25,
+      control = grid_ctrl,
+      verbose = TRUE
+   )
+   
+```
+
+- Now, use `rank_results` on your selected performance metric and `autoplot` to replicate figure 15.1. Does one model perform significantly better than others? Select what you feel is the best by finalizing your model (see Section 15.5).
+
+```
+best_results <- 
+   grid_results %>% 
+   extract_workflow_set_result("best model type name") %>% 
+   select_best(metric = "your metric")
+best_results
+
+best_results_fit <- 
+   race_results %>% 
+   extract_workflow("best model type name") %>% 
+   finalize_workflow(best_results) %>% 
+   last_fit(split = your_testing_data)
+```
+
+- Consider making a simple visualization of predicted / observed values from your best model similar to Figure 15.5
+
+```
+best_results_fit %>% 
+   collect_predictions() %>% 
+   ggplot(aes(x = target_variable, y = .pred)) + 
+   geom_abline(color = "gray50", lty = 2) + 
+   geom_point(alpha = 0.5) + 
+   coord_obs_pred() + 
+   labs(x = "observed", y = "predicted")
+```
+
+### Part B, Hyperparameter Exploration for Classification
+
+Mirroring Section 14.2.3, take your current workflow and use `tune_bayes()` to create a small tuning grid for your classification model. You will need to:
+
+- Identify appropriate hyperparameters to be tuned for your chosen model type and set them equal to `tune()` in your workflow
+- Manually create a start_grid and evaluate your workflow to create initial values for `tune_bayes()`
+
+```
+initial_vals <- tune_grid(
+  resampled_data,
+  grid = 4,
+  metrics = ...,
+  param_info = ...
+)
+```
+
+- Run a bayes search
+
+```
+ctrl <- control_bayes(verbose = TRUE)
+
+your_search <- 
+  your_workflow %>%
+  tune_bayes(
+    resamples = ...,
+    metrics = ...,
+    initial = initial_vals,
+    iter = 25,
+    control = ctrl
+  )
+```
+- Call `show_best` and finalize your model
+
+### Part C, Conclusion & Presentation
+
+Write a four paragraph conclusion to your file. Include information on your model type, its performance on your chosen objective function, any ethical or implementation issues (e.g. should Detroit use your model?).
+
+In class on the 31st, everyone will give a brief presentation on their work. You may present your knitted Rmd file or pull some of your graphs into a slide deck. Your presentation should be at most five minutes. Broadly look to answer if your model should be implemented by discussing the information in your conclusion and assignment.
+
 
 ## Grading Overview
 
 For each assignment, you will be graded on substantial completion of the assignment (demonstrated by an attempt of all parts). When submitting parts 2, 3, and 4, you will be additionally graded on your incorporation of feedback, new concepts from the course, or the correction of any flagged issues.
 
-The assignment will culminate in a final submission of code/report and presentation. Code will be graded based on reproducibility, conceptual understanding, and accuracy. The report will be an Rmarkdown file which knits together graphs, tables, and ethical frameworks. It should be concise (include only relevant information from Parts 1-4). This report will be used to give a five minute presentation to the class on your model and ethnical/technical issues with Detroit property assessment.
+The assignment will culminate in a final submission of code/report and presentation. Code will be graded based on reproducibility, conceptual understanding, and accuracy. The report will be an Rmarkdown file which knits together graphs, tables, and ethical frameworks. It should be concise (include only relevant information from Parts 1-4). This report will be used to give a five minute presentation to the class on your model and ethical/technical issues with Detroit property assessment.
 
 
 | Date   | Points | Category                                     | Notes                                                                           |
