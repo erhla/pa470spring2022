@@ -177,7 +177,7 @@ best_results <-
 best_results
 
 best_results_fit <- 
-   race_results %>% 
+   grid_results %>% 
    extract_workflow("best model type name") %>% 
    finalize_workflow(best_results) %>% 
    last_fit(split = your_testing_data)
