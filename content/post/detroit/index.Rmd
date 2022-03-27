@@ -108,6 +108,9 @@ For Model B/overassessment, aggregate your predictions by census tract. Join in 
 
 For Model C/assessment, undertake an initial analysis of which factors your model identified as most important for valuation. 
 
+## [Part 3 Example](/solutions/part_3.Rmd)
+## [Part 3 Example HTML](/solutions/part_3.html)
+
 ## Final Submission (Due 3/31)
 
 Create `final_report.Rmd` in the reports folder, copying the yaml/framework from `part_1.Rmd`.
