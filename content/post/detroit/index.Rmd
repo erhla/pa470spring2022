@@ -131,7 +131,7 @@ linear_reg_spec <-
    set_engine("glmnet")
    
 rf_spec <- 
-   rand_forest(mtry = tune(), min_n = tune(), trees = 1000) %>% 
+   rand_forest(mtry = tune(), min_n = tune(), trees = 250) %>% 
    set_engine("ranger") %>% 
    set_mode("regression")
    
@@ -142,7 +142,7 @@ xgb_spec <-
    set_mode("regression")
    
 my_set <- workflow_set(
-  preproc = your_recipie,
+  preproc = list(name_for_your_recipie = your_recipie),
   models = list(linear_reg = linear_reg_spec, random_forest = rf_spec, boosted = xgb_spec)
 )
 ```
@@ -154,16 +154,16 @@ The textbook applies slightly different preprocessing steps to these models, but
 ```
 grid_ctrl <-
    control_grid(
-      save_pred = TRUE,
-      save_workflow = TRUE
+      save_pred = FALSE,
+      save_workflow = FALSE
    )
 
 grid_results <-
    my_set %>%
    workflow_map(
       seed = 1503,
-      resamples = your_samples,
-      grid = 25,
+      resamples = your_resamples,
+      grid = 5,
       control = grid_ctrl,
       verbose = TRUE
    )
@@ -183,7 +183,7 @@ best_results_fit <-
    grid_results %>% 
    extract_workflow("best model type name") %>% 
    finalize_workflow(best_results) %>% 
-   last_fit(split = your_testing_data)
+   last_fit(split = your_rsample_data) #this is the output of rsample::initial_time_split() or rsample::initial_split()
 ```
 
 - Consider making a simple visualization of predicted / observed values from your best model similar to Figure 15.5
@@ -206,12 +206,12 @@ Mirroring Section 14.2.3, take your current workflow and use `tune_bayes()` to c
 - Manually create a start_grid and evaluate your workflow to create initial values for `tune_bayes()`
 
 ```
-initial_vals <- tune_grid(
-  resampled_data,
-  grid = 4,
-  metrics = ...,
-  param_info = ...
-)
+initial_vals <- your_workflow %>%
+  tune_grid(
+    resampled_data,
+    grid = 4,
+    metrics = your_metric_set,
+  )
 ```
 
 - Run a bayes search
@@ -224,7 +224,7 @@ your_search <-
   tune_bayes(
     resamples = ...,
     metrics = ...,
-    initial = initial_vals,
+    initial = initial_vals, #note you may simply pass a number here e.g. 6 for a random search
     iter = 25,
     control = ctrl
   )

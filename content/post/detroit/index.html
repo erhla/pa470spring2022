@@ -122,7 +122,7 @@ height, (1 1 to 1.5, 2 1.5 to 2.5, 3 3+)</code></pre>
    set_engine(&quot;glmnet&quot;)
    
 rf_spec &lt;- 
-   rand_forest(mtry = tune(), min_n = tune(), trees = 1000) %&gt;% 
+   rand_forest(mtry = tune(), min_n = tune(), trees = 250) %&gt;% 
    set_engine(&quot;ranger&quot;) %&gt;% 
    set_mode(&quot;regression&quot;)
    
@@ -133,7 +133,7 @@ xgb_spec &lt;-
    set_mode(&quot;regression&quot;)
    
 my_set &lt;- workflow_set(
-  preproc = your_recipie,
+  preproc = list(name_for_your_recipie = your_recipie),
   models = list(linear_reg = linear_reg_spec, random_forest = rf_spec, boosted = xgb_spec)
 )</code></pre>
 <p>The textbook applies slightly different preprocessing steps to these models, but they should work reasonably well with your current recipe. If you have any compatability issues, I recommend starting with a simple recipe and adding things back one at a time.</p>
@@ -142,16 +142,16 @@ my_set &lt;- workflow_set(
 </ul>
 <pre><code>grid_ctrl &lt;-
    control_grid(
-      save_pred = TRUE,
-      save_workflow = TRUE
+      save_pred = FALSE,
+      save_workflow = FALSE
    )
 
 grid_results &lt;-
    my_set %&gt;%
    workflow_map(
       seed = 1503,
-      resamples = your_samples,
-      grid = 25,
+      resamples = your_resamples,
+      grid = 5,
       control = grid_ctrl,
       verbose = TRUE
    )
@@ -169,7 +169,7 @@ best_results_fit &lt;-
    grid_results %&gt;% 
    extract_workflow(&quot;best model type name&quot;) %&gt;% 
    finalize_workflow(best_results) %&gt;% 
-   last_fit(split = your_testing_data)</code></pre>
+   last_fit(split = your_rsample_data) #this is the output of rsample::initial_time_split() or rsample::initial_split()</code></pre>
 <ul>
 <li>Consider making a simple visualization of predicted / observed values from your best model similar to Figure 15.5</li>
 </ul>
@@ -188,12 +188,12 @@ best_results_fit &lt;-
 <li>Identify appropriate hyperparameters to be tuned for your chosen model type and set them equal to <code>tune()</code> in your workflow</li>
 <li>Manually create a start_grid and evaluate your workflow to create initial values for <code>tune_bayes()</code></li>
 </ul>
-<pre><code>initial_vals &lt;- tune_grid(
-  resampled_data,
-  grid = 4,
-  metrics = ...,
-  param_info = ...
-)</code></pre>
+<pre><code>initial_vals &lt;- your_workflow %&gt;%
+  tune_grid(
+    resampled_data,
+    grid = 4,
+    metrics = your_metric_set,
+  )</code></pre>
 <ul>
 <li>Run a bayes search</li>
 </ul>
@@ -204,7 +204,7 @@ your_search &lt;-
   tune_bayes(
     resamples = ...,
     metrics = ...,
-    initial = initial_vals,
+    initial = initial_vals, #note you may simply pass a number here e.g. 6 for a random search
     iter = 25,
     control = ctrl
   )</code></pre>
