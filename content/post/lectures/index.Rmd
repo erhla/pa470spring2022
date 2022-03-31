@@ -77,3 +77,8 @@ knitr::opts_chunk$set(collapse = TRUE,
 # Week 11
 
 - [Assignment 4 Overview](https://uic.zoom.us/rec/share/-_rf8ZsdHbRmVqzHVyLoCITybgXBREJSDlo5XdXTWN8W77Ptg9_FUoYdprFW5kP2.eNlxysx-2FbvdofA?startTime=1648165578000)
+
+# Week 12
+
+- [Code](/lectures/week_12.Rmd)
+- [Code Output](/lectures/week_12.html)
