@@ -521,7 +521,8 @@ reg_recipe <- recipe(sp_log ~  parcel_num + Neighborhood + ASSESSEDVALUE +
   step_date(sale_date, features = c("dow", "month", "year"), keep_original_cols = FALSE) %>%
   update_role(parcel_num, new_role = 'PARCELID') %>%
   step_log(ASSESSEDVALUE) %>%
-  step_impute_mean(ASSESSEDVALUE, total_squa, total_floo, year_built, pct_over_50, foreclosures_per_prop) %>%
+  step_impute_mean(ASSESSEDVALUE, total_squa, total_floo, 
+                   year_built, pct_over_50, foreclosures_per_prop) %>%
   step_unknown(all_nominal_predictors()) %>%
   step_dummy(all_nominal_predictors()) %>%
   prep()
@@ -587,7 +588,7 @@ best_results_fit %>%
 ## Model Evaluation
 
 ```{r}
-model_fit_reg <- best_results_fit <- 
+model_fit_reg <-
    grid_results %>% 
    extract_workflow("reg_recp_random_forest") %>% 
    finalize_workflow(best_results) %>%
