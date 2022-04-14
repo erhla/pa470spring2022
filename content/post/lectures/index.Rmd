@@ -82,3 +82,10 @@ knitr::opts_chunk$set(collapse = TRUE,
 
 - [Code](/lectures/week_12.Rmd)
 - [Code Output](/lectures/week_12.html)
+
+# Week 14
+
+- [Code](/lectures/week_14.Rmd)
+- [Code Output](/lectures/week_14.html)
+- [Code 2](/lectures/week_14_2.Rmd)
+- [Code Output 2](/lectures/week_14_2.html)
