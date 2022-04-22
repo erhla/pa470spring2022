@@ -8,11 +8,16 @@ publishdate: 2022-01-01T00:00:00-00:00
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(collapse = TRUE)
+
+#https://www.technologyreview.com/2022/04/19/1049996/south-africa-ai-surveillance-digital-apartheid/
+
 ```
 
 # PA 470 – Artificial Intelligence and Machine Learning in the Public Sector
 
 *Public sector applications of artificial intelligence and machine learning. Philosophical foundations of artificial intelligence and major frameworks for learning.*
+
+
 
 Artificial intelligence (AI) and machine learning (ML) have transformed the private sector pressuring the public sector to follow suit and become *smart* by adopting AI/ML. 
 Yet, public sector applications differ greatly from private sector ones where issues like data availability and equity can be easily sidestepped.
@@ -182,6 +187,8 @@ Spring Vacation No Class
 ## Week 16, 4/28
 
 *Final Presentations*
+
+**Assignment: [Final Project](/final-project), Due 4/28**
 
 # Course Inspired by...
 

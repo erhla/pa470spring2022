@@ -238,7 +238,7 @@ tidy_glove %>%
 
 
 tidy_glove %>%
-  nearest_neighbors("banana")
+  nearest_neighbors("school")
 
 
 tidy_glove %>%
